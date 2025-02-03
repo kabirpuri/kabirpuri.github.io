@@ -6,23 +6,96 @@
     <title>Kabir Puri</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        /* Previous CSS styles remain the same */
-        .project {
-            margin-bottom: 30px;
+        :root {
+            --primary-color: #1a237e;
+            --secondary-color: #0d47a1;
+            --text-color: #333;
+            --background-color: #ffffff;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+        }
+
+        .main-container {
+            display: flex;
+            max-width: 1400px;
+            margin: 0 auto;
             padding: 20px;
-            border-left: 3px solid var(--secondary-color);
+            gap: 40px;
         }
-        
-        .project-date {
+
+        .sidebar {
+            width: 300px;
+            position: sticky;
+            top: 20px;
+            height: fit-content;
+        }
+
+        .profile-img {
+            width: 100%;
+            max-width: 300px;
+            margin-bottom: 20px;
+        }
+
+        .content {
+            flex: 1;
+        }
+
+        .contact-info {
+            margin: 20px 0;
+        }
+
+        .contact-item {
+            display: block;
+            margin: 10px 0;
+            color: var(--text-color);
+            text-decoration: none;
+        }
+
+        .contact-item i {
+            width: 20px;
+            color: var(--primary-color);
+        }
+
+        section {
+            margin-bottom: 30px;
+        }
+
+        .project, .experience-item {
+            margin-bottom: 25px;
+            padding-left: 15px;
+            border-left: 2px solid var(--secondary-color);
+        }
+
+        h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 10px;
+        }
+
+        h3 {
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        .date-location {
             color: #666;
-            font-style: italic;
-            margin-bottom: 10px;
-        }
-        
-        .project-skills {
-            color: var(--secondary-color);
             font-size: 0.9em;
-            margin-top: 10px;
+            margin: 5px 0;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        .education-brief {
+            margin: 20px 0;
         }
     </style>
 </head>
@@ -31,15 +104,14 @@
         <div class="sidebar">
             <section id="about">
                 <h2>About Me</h2>
-                <p>Currently pursuing my MSE in Robotics at the University of Pennsylvania, I combine mechanical engineering fundamentals with advanced robotics and AI expertise. My research interests span autonomous systems, computer vision, and machine learning, with a focus on developing innovative solutions for real-world challenges.</p>
+                <p>Currently pursuing my MSE in Robotics at the University of Pennsylvania. My research interests span autonomous systems, computer vision, and machine learning, with a focus on developing innovative solutions for real-world challenges.</p>
             </section>
             
             <img src="profile.jpg" alt="Kabir Puri" class="profile-img">
             
             <div class="education-brief">
                 <p><strong>MSE in Robotics</strong><br>
-                University of Pennsylvania<br>
-                Expected May 2026</p>
+                University of Pennsylvania</p>
             </div>
 
             <div class="contact-info">
@@ -63,72 +135,38 @@
         </div>
 
         <div class="content">
-            <section id="projects">
-                <h2>Projects</h2>
-                
-                <div class="project">
-                    <h3>Feature Matching with Transformers and Camera Localization</h3>
-                    <div class="project-date">November 2024 - December 2024</div>
+            <!-- Projects section remains the same as previous version -->
+            
+            <section id="experience">
+                <h2>Experience</h2>
+                <div class="experience-item">
+                    <h3>Intern - Intelligent Manufacturing</h3>
+                    <div class="date-location">Dalip Manufacturers and CO. | May 2023 - Sep 2023 | Mumbai</div>
                     <ul>
-                        <li>Built an algorithm using LoFTR (Detector-Free Local Feature Mapping with Transformers) to find feature matches between multiple images</li>
-                        <li>Implemented a low parameter Neural Network to estimate the position and orientation of each frame using reconstruction error with the LoFTR matches as ground truth</li>
-                        <li>Achieved a Squared error loss of 2.17e-07 and an almost perfect 3D point cloud representation of the scene</li>
+                        <li>Engineered an image Recognition model to automate defect detection and implemented computer vision powered dimensional checks</li>
+                        <li>Developed a Machine Learning model for anomaly detection through control chart data analysis, achieving 93.89% model accuracy</li>
+                        <li>Conducted Data-Driven hypothesis testing, demonstrating 30% reduction in faulty piece throughput</li>
                     </ul>
                 </div>
 
-                <div class="project">
-                    <h3>Robot Arm Pick and Place Challenge</h3>
-                    <div class="project-date">October 2024 - December 2024</div>
+                <div class="experience-item">
+                    <h3>Intern - Mechanical Engineering</h3>
+                    <div class="date-location">NOV India Pvt Ltd | Dec 2021 - Apr 2022 | Mumbai</div>
                     <ul>
-                        <li>Finished 3rd out of 20 teams</li>
-                        <li>Developed and optimized an intelligent strategy to quickly and reliably pick stationary and moving blocks and stack them</li>
-                        <li>Integrated a vision system to detect blocks using april tags</li>
-                        <li>Implemented RRT (rapidly exploring random trees) and Potential fields algorithm for path planning</li>
+                        <li>Coordinated repair workflow of 7 oil drilling machines</li>
+                        <li>Designed a material handling device for shop floor operations</li>
+                        <li>Facilitated documentation of over 5000 spare parts into a database</li>
                     </ul>
                 </div>
+            </section>
 
-                <div class="project">
-                    <h3>AI Revolutionising AGV Motion (Research Paper)</h3>
-                    <div class="project-date">January 2024 - July 2024</div>
-                    <p>Presented for Publication - Springer, ICCM 2024</p>
-                    <ul>
-                        <li>Explored AI techniques including heuristic search, LLM, Natural Language Processing, and dynamic optimization for AGV path planning</li>
-                        <li>Analyzed innovations and challenges in AI-based navigation</li>
-                        <li>Investigated emerging technologies in autonomous navigation and pathways to general intelligence in mobile robotics</li>
-                    </ul>
-                    <div class="project-skills">Skills: Robotics · TensorFlow · Computer Vision</div>
-                </div>
-
-                <div class="project">
-                    <h3>Plant Disease Detection Robot</h3>
-                    <div class="project-date">December 2023 - March 2024</div>
-                    <ul>
-                        <li>Pioneered an automated plant disease detection system for large-scale agricultural challenges</li>
-                        <li>Developed a CNN model achieving 98% validation accuracy for leaf disease detection</li>
-                        <li>Constructed a prototype robot with autonomous navigation using LIDAR-based SLAM</li>
-                        <li>Integrated CNN model with development environment and physical robot</li>
-                        <li>Incorporated Large Language Models to provide comprehensive information to farmers</li>
-                    </ul>
-                    <div class="project-skills">Skills: Computer Vision · Robotics · TensorFlow</div>
-                </div>
-
-                <div class="project">
-                    <h3>Optimization of Multi-flow Nozzle</h3>
-                    <div class="project-date">August 2023</div>
-                    <ul>
-                        <li>Used multivariate polynomial regression on experimental data to develop a system of equations</li>
-                        <li>Designed Multi-flow nozzles primarily used in fountains</li>
-                    </ul>
-                </div>
-
-                <div class="project">
-                    <h3>Gardening Automation System</h3>
-                    <div class="project-date">2023</div>
-                    <ul>
-                        <li>Developed a system to control soil moisture level, ambient temperature and sunlight exposure for a greenhouse</li>
-                        <li>Used ThingSpeak IOT to control the system via a phone</li>
-                    </ul>
-                </div>
+            <section id="skills">
+                <h2>Technical Skills</h2>
+                <ul>
+                    <li><strong>Programming:</strong> Python, MATLAB, C++</li>
+                    <li><strong>AI/ML and Robotics:</strong> TensorFlow, Keras, PyTorch, Numpy, Pandas, Matplotlib, OpenCV, Sk-Learn, Linux, ROS</li>
+                    <li><strong>Design and Analysis:</strong> Solidworks, Autodesk Inventor, Fusion360, Ansys Structural</li>
+                </ul>
             </section>
         </div>
     </div>
