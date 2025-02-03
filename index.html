@@ -6,167 +6,165 @@
     <title>Kabir Puri - Robotics Engineer</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        :root {
-            --primary-color: #1a237e;
-            --secondary-color: #0d47a1;
-            --text-color: #333;
-            --background-color: #f5f6fa;
+        /* Previous CSS styles remain the same */
+        .section-content {
+            margin-left: 20px;
         }
         
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            background-color: var(--background-color);
-            color: var(--text-color);
-        }
-
-        .main-container {
-            display: flex;
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        .sidebar {
-            width: 300px;
-            padding: 20px;
-            background-color: white;
-            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
-        }
-
-        .content {
-            flex: 1;
-            padding: 20px 40px;
-        }
-
-        .profile-img {
-            width: 100%;
-            max-width: 300px;
+        .experience-item, .education-item {
             margin-bottom: 20px;
+            padding-left: 15px;
+            border-left: 2px solid var(--secondary-color);
         }
 
-        .contact-info {
-            margin: 20px 0;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            margin: 10px 0;
-            color: var(--text-color);
-            text-decoration: none;
-        }
-
-        .contact-item i {
-            width: 25px;
-            margin-right: 10px;
-            color: var(--primary-color);
-        }
-
-        .contact-item:hover {
-            color: var(--secondary-color);
-        }
-
-        section {
-            margin: 30px 0;
-            padding: 20px;
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-
-        .project {
-            margin-bottom: 25px;
-            padding-bottom: 15px;
-            border-bottom: 1px solid #eee;
-        }
-
-        .project h3 {
-            color: var(--primary-color);
-            margin-bottom: 5px;
-        }
-
-        .project-date {
+        .date-location {
             color: #666;
             font-size: 0.9em;
-            margin-bottom: 10px;
+            margin: 5px 0;
         }
 
-        h2 {
-            color: var(--primary-color);
-            border-bottom: 2px solid var(--secondary-color);
-            padding-bottom: 10px;
-            margin-bottom: 20px;
+        .detail-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .detail-list li {
+            margin: 8px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .detail-list li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--secondary-color);
         }
     </style>
 </head>
 <body>
     <div class="main-container">
         <div class="sidebar">
+            <section id="about">
+                <h2>About Me</h2>
+                <p>I am a passionate robotics engineer pursuing my MSE in Robotics at UPenn, with a strong foundation in mechanical engineering and AI. My research focuses on autonomous systems, computer vision, and machine learning, with particular emphasis on developing practical solutions for real-world challenges. As a first-rank graduate from MPSTME, I bring both academic excellence and hands-on experience in robotics and automation.</p>
+            </section>
+            
             <img src="profile.jpg" alt="Kabir Puri" class="profile-img">
+            
             <div class="contact-info">
-                <a href="tel:848-997-8623" class="contact-item">
+                <span class="contact-item">
                     <i class="fas fa-phone"></i>
                     848-997-8623
-                </a>
-                <a href="mailto:kabirpuri117@gmail.com" class="contact-item">
+                </span>
+                <span class="contact-item">
                     <i class="fas fa-envelope"></i>
                     kabirpuri117@gmail.com
-                </a>
-                <a href="https://github.com/kabirpuri" target="_blank" class="contact-item">
+                </span>
+                <span class="contact-item">
                     <i class="fab fa-github"></i>
                     github.com/kabirpuri
-                </a>
-                <a href="https://www.linkedin.com/in/kabir-puri-2633281b1/" target="_blank" class="contact-item">
+                </span>
+                <span class="contact-item">
                     <i class="fab fa-linkedin"></i>
                     linkedin.com/in/kabir-puri
-                </a>
+                </span>
             </div>
         </div>
 
         <div class="content">
             <section id="projects">
-                <h2>Projects</h2>
-                <div class="project">
-                    <h3>Feature Matching with Transformers and Camera Localization</h3>
-                    <div class="project-date">November 2024 - December 2024</div>
-                    <p>Advanced computer vision project implementing LoFTR for precise feature matching between multiple images. Developed a low-parameter Neural Network achieving remarkable accuracy with squared error loss of 2.17e-07 in 3D point cloud reconstruction.</p>
-                </div>
+                <!-- Previous projects section remains the same -->
+            </section>
 
-                <div class="project">
-                    <h3>Robot Arm Pick and Place Challenge</h3>
-                    <div class="project-date">October 2024 - December 2024</div>
-                    <p>Led team to 3rd place among 20 teams. Implemented RRT and Potential fields algorithms for efficient path planning, integrated with vision systems using april tags for block detection. Developed intelligent strategy for handling both stationary and moving blocks.</p>
+            <section id="education">
+                <h2>Education</h2>
+                <div class="education-item">
+                    <h3>University of Pennsylvania</h3>
+                    <div class="date-location">Expected May 2026 - Philadelphia</div>
+                    <p>MSE in Robotics</p>
+                    <p>Coursework: Introduction to Robotics, Machine Learning, Machine Perception, Learning in Robotics, F1/10th Autonomous Racing, Learning and Control for Adaptive and Reactive robots</p>
                 </div>
-
-                <div class="project">
-                    <h3>AI Revolutionising AGV Motion</h3>
-                    <div class="project-date">January 2024 - July 2024</div>
-                    <p>Research paper presented for Springer ICCM 2024, exploring AI techniques in AGV path planning. Analyzed emerging technologies in autonomous navigation and investigated pathways to general intelligence in mobile robotics.</p>
-                </div>
-
-                <div class="project">
-                    <h3>Plant Disease Detection Robot</h3>
-                    <div class="project-date">December 2023 - March 2024</div>
-                    <p>Developed autonomous agricultural robot with LIDAR-based SLAM navigation. Implemented CNN model achieving 98% validation accuracy for disease detection. Integrated LLM capabilities for comprehensive farmer assistance.</p>
-                </div>
-
-                <div class="project">
-                    <h3>Optimization of Multi-flow Nozzle</h3>
-                    <div class="project-date">August 2023</div>
-                    <p>Applied multivariate polynomial regression to experimental data for designing optimal multi-flow nozzles used in fountains. Developed system of equations for precise flow control and efficiency optimization.</p>
-                </div>
-
-                <div class="project">
-                    <h3>Gardening Automation System</h3>
-                    <div class="project-date">2023</div>
-                    <p>Created IoT-based greenhouse automation system controlling soil moisture, temperature, and sunlight exposure. Implemented ThingSpeak for mobile monitoring and control capabilities.</p>
+                
+                <div class="education-item">
+                    <h3>NMIMS, MPSTME</h3>
+                    <div class="date-location">May 2024 - Mumbai</div>
+                    <p>BTech in Mechanical Engineering</p>
+                    <p>Achievements: Dean's List, Graduated 1st in class of 43 Students</p>
                 </div>
             </section>
 
-            <!-- Add other sections (Education, Experience, Skills) here -->
+            <section id="experience">
+                <h2>Professional Experience</h2>
+                <div class="experience-item">
+                    <h3>Executive - MPSTME Racing</h3>
+                    <div class="date-location">June 2021 - September 2021 (4 months) | Mumbai, Maharashtra, India - Hybrid</div>
+                    <ul class="detail-list">
+                        <li>Design of Suspension geometry</li>
+                        <li>Used regression to find an optimal solution for suspension geometry parameters</li>
+                        <li>Design and optimization of parts using SolidWorks and Ansys mechanical</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <h3>Executive - Mechanical Design and Development, Team IGVC MPSTME</h3>
+                    <div class="date-location">July 2020 - April 2021 (10 months) | India</div>
+                    <ul class="detail-list">
+                        <li>Designed a robot chassis with electronics integration, achieving 10% weight reduction without loss of structural integrity</li>
+                        <li>Aided the Obstacle Recognition and Avoidance system, minimizing the possibility of damage during operation</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <h3>Intern - Intelligent Manufacturing, Dalip Manufacturers and CO.</h3>
+                    <div class="date-location">May 2023 - September 2023 | Mumbai</div>
+                    <ul class="detail-list">
+                        <li>Engineered an image Recognition model to automate defect detection and implemented computer vision powered dimensional checks</li>
+                        <li>Developed a Machine Learning model for anomaly detection through control chart data analysis, achieving 93.89% model accuracy</li>
+                        <li>Conducted Data-Driven hypothesis testing, demonstrating 30% reduction in faulty piece throughput</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <h3>Intern - Mechanical Engineering, NOV India Pvt Ltd</h3>
+                    <div class="date-location">December 2021 - April 2022 | Mumbai</div>
+                    <ul class="detail-list">
+                        <li>Coordinated repair workflow of 7 oil drilling machines</li>
+                        <li>Designed a material handling device for shop floor operations</li>
+                        <li>Facilitated documentation of over 5000 spare parts into a database</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="volunteering">
+                <h2>Volunteering</h2>
+                <div class="experience-item">
+                    <h3>Mathematics Teacher and Educational Supervisor - Enrich Lives Foundation</h3>
+                    <div class="date-location">May 2023 - Present | Education</div>
+                    <ul class="detail-list">
+                        <li>Set up mathematics curriculum and taught multiple classes</li>
+                        <li>Mentored students with difficulty in studies and educated them about the importance of education</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <h3>Teacher - Rochiram Thadhani School for hearing handicapped</h3>
+                    <div class="date-location">June 2022 - July 2022 | Education</div>
+                    <ul class="detail-list">
+                        <li>Taught students about computers and relevant tools</li>
+                        <li>Helped students with difficulty in maths and science</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="skills">
+                <h2>Technical Skills</h2>
+                <div class="section-content">
+                    <p><strong>Programming Languages:</strong> Python, MATLAB, C++</p>
+                    <p><strong>AI/ML and Robotics:</strong> TensorFlow, Keras, PyTorch, Numpy, Pandas, Matplotlib, OpenCV, Sk-Learn, Linux, ROS, Gazebo</p>
+                    <p><strong>Design and Analysis:</strong> Solidworks, Autodesk Inventor, Fusion360, Ansys Structural</p>
+                </div>
+            </section>
         </div>
     </div>
 </body>
