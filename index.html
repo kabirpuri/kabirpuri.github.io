@@ -12,7 +12,7 @@
             --text-color: #333;
             --background-color: #ffffff;
         }
-        
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
@@ -114,13 +114,13 @@
         <div class="sidebar">
             <section id="about">
                 <h2>About Me</h2>
-                <p>Currently pursuing my MSE in Robotics at the University of Pennsylvania. My research interests span autonomous systems, computer vision, and machine learning, with a focus on developing innovative solutions for real-world challenges.</p>
+                <p>Currently pursuing my Masters of Science in Robotics at the University of Pennsylvania. My research interests span autonomous systems, computer vision, and machine learning, with a focus on developing innovative solutions for real-world challenges.</p>
             </section>
-            
+
             <img src="profile.jpg" alt="Kabir Puri" class="profile-img">
             
             <div class="education-brief">
-                <p><strong>MSE in Robotics</strong><br>
+                <p><strong>Masters of Science in Robotics</strong><br>
                 University of Pennsylvania</p>
             </div>
 
@@ -142,52 +142,77 @@
                     linkedin.com/in/kabir-puri
                 </a>
             </div>
+
+            <section id="courses">
+                <h2>Courses at UPenn</h2>
+                <ul>
+                    <li>Introduction to Robotics</li>
+                    <li>Machine Learning</li>
+                    <li>Machine Perception</li>
+                    <li>Learning in Robotics</li>
+                    <li>F1/10th Autonomous Racing</li>
+                    <li>Learning and Control for Adaptive and Reactive Robots</li>
+                </ul>
+            </section>
         </div>
 
         <div class="content">
             <section id="projects">
                 <h2>Projects</h2>
                 <div class="project">
+                    <h3>Learning Dynamical Systems for Adaptive Motion Planning</h3>
+                    <div class="date-location">November 2024 - December 2024</div>
+                    <ul>
+                        <li>Implemented and analyzed various dynamical system learning techniques including SEDS (Stable Estimator of Dynamical Systems) and LPV-DS (Linear Parameter Varying - Dynamical Systems), to enhance adaptive motion planning capabilities.</li>
+                        <li>Conducted comprehensive evaluations on diverse datasets, ranging from theoretical trajectories to real-world motion data, to assess the performance and robustness of the implemented systems.</li>
+                        <li>Explored advanced preprocessing techniques and parameter optimization strategies to significantly enhance system performance and adaptability in complex environments.</li>
+                        <li>Applied the learned dynamical systems to robotic arm control, demonstrating adaptive and reactive motion planning in practical scenarios.</li>
+                    </ul>
+                </div>
+
+                <div class="project">
+                    <h3>Autonomous Reactive Racing on 1/10th Scale Cars using LiDAR</h3>
+                    <div class="date-location">October 2024 - December 2024</div>
+                    <ul>
+                        <li>Developed a reactive follow-gap algorithm for autonomous racing using ROS2 and Python</li>
+                        <li>Implemented LiDAR data processing techniques including downsampling, clipping, and disparity extension</li>
+                        <li>Created a dynamic speed control system based on obstacle proximity for optimal performance</li>
+                        <li>Designed a steering control algorithm to navigate through the largest detected gaps in the environment</li>
+                        <li>Utilized ROS2 publishers and subscribers for real-time communication between nodes</li>
+                    </ul>
+                </div>
+
+                <div class="project">
                     <h3>Feature Matching with Transformers and Camera Localization</h3>
                     <div class="date-location">November 2024 - December 2024</div>
                     <ul>
-                        <li>Built an algorithm using LoFTR (Detector-Free Local Feature Mapping with Transformers) to find feature matches between multiple images</li>
-                        <li>Implemented a low parameter Neural Network to estimate the position and orientation of each frame using reconstruction error with the LoFTR matches as ground truth</li>
-                        <li>Achieved a Squared error loss of 2.17e-07 and an almost perfect 3D point cloud representation of the scene</li>
+                        <li>Developed an advanced algorithm utilizing LoFTR (Local Feature TRansformer) to achieve high-precision feature matches across multiple images, enhancing visual odometry capabilities.</li>
+                        <li>Engineered a low-parameter Neural Network for estimating frame positions and orientations, leveraging reconstruction error with LoFTR matches as ground truth for improved accuracy.</li>
+                        <li>Achieved a remarkable 90% reduction in loss compared to traditional SIFT feature matches when employing the same neural network architecture, demonstrating significant improvements in camera localization techniques.</li>
                     </ul>
                 </div>
 
                 <div class="project">
-                    <h3>Robot Arm Pick and Place Challenge</h3>
+                    <h3>Robot Arm Pick and Place with 7 DOF Franka Arm</h3>
                     <div class="date-location">October 2024 - December 2024</div>
                     <ul>
-                        <li>Finished 3rd out of 20 teams</li>
-                        <li>Developed and optimized an intelligent strategy to quickly and reliably pick stationary and moving blocks and stack them</li>
-                        <li>Integrated a vision system to detect blocks using april tags</li>
-                        <li>Implemented RRT (rapidly exploring random trees) and Potential fields algorithm for path planning</li>
+                        <li>Secured 3rd place out of 20 teams in a highly competitive robotics challenge, showcasing exceptional problem-solving and implementation skills.</li>
+                        <li>Engineered and optimized an intelligent strategy for robot arm manipulation, enabling efficient picking and placing of both static and dynamic objects in complex environments.</li>
+                        <li>Developed a comprehensive robot control library, incorporating advanced forward and inverse kinematics algorithms for precise arm movements.</li>
+                        <li>Integrated a sophisticated vision system utilizing AprilTags for accurate object detection and localization, enhancing the robot's perception capabilities.</li>
+                        <li>Implemented and compared various path planning algorithms, including RRT (Rapidly-exploring Random Trees) and Potential Fields, to optimize trajectory generation for the robotic arm.</li>
                     </ul>
                 </div>
 
                 <div class="project">
-                    <h3>AI Revolutionizing AGV Motion</h3>
-                    <div class="date-location">January 2024 - July 2024</div>
-                    <ul>
-                        <li>Presented for Publication - Springer, ICCM 2024</li>
-                        <li>The review paper explores how AI Models and Algorithms enhance AGV path planning for smoother and safer mobility</li>
-                        <li>Highlights the innovations and challenges in AI-based navigation</li>
-                        <li>Investigates emerging technologies in autonomous navigation, searching for potential pathways to general intelligence in mobile robotics</li>
-                    </ul>
-                </div>
-
-                <div class="project">
-                    <h3>Plant Disease Detection Robot</h3>
+                    <h3>AGV for Plant Disease Detection Using GoogleNet</h3>
                     <div class="date-location">December 2023 - March 2024</div>
                     <ul>
-                        <li>Pioneered an automated plant disease detection system to address a large-scale agricultural challenge</li>
-                        <li>Developed a CNN model with 98% validation accuracy for leaf disease detection through computer vision</li>
+                        <li>Pioneered an automated plant disease detection system to address a large-scale agricultural challenge using ROS2 and the Nav2 module</li>
                         <li>Constructed a prototype robot to autonomously navigate around a farm using LIDAR sensor based SLAM</li>
-                        <li>Integrated the CNN model into the development environment and the physical robot</li>
-                        <li>Incorporated LLMs to provide farmers with comprehensive and accessible information</li>
+                        <li>Performed transfer learning with GoogleNet to achieve 98% validation accuracy for leaf disease detection through computer vision</li>
+                        <li>Integrated the trained model into the development environment and the physical robot with onboard computer vision capabilities</li>
+                        <li>Incorporated Large Language Models (LLMs) to provide farmers with comprehensive and accessible information about detected plant diseases</li>
                     </ul>
                 </div>
 
@@ -196,7 +221,7 @@
                     <div class="date-location">August 2023</div>
                     <ul>
                         <li>Used multivariate polynomial regression on experimental data to develop a system of equations</li>
-                        <li>Designed Multi-flow nozzles primarily used in fountains</li>
+                        <li>Designed Multi-flow nozzles primarily used in fountains, optimizing for various flow characteristics</li>
                     </ul>
                 </div>
             </section>
@@ -207,9 +232,9 @@
                     <h3>Intern - Intelligent Manufacturing</h3>
                     <div class="date-location">Dalip Manufacturers and CO. | May 2023 - Sep 2023 | Mumbai</div>
                     <ul>
-                        <li>Engineered an image Recognition model to automate defect detection and implemented computer vision powered dimensional checks</li>
-                        <li>Developed a Machine Learning model for anomaly detection through control chart data analysis, achieving 93.89% model accuracy</li>
-                        <li>Conducted Data-Driven hypothesis testing, demonstrating 30% reduction in faulty piece throughput</li>
+                        <li>Engineered an image recognition software to automate defect detection and implemented computer vision powered dimensional checks, enhancing the quality control process</li>
+                        <li>Developed a general Machine Learning model for anomaly detection through control chart data analysis, achieving 93.89% model accuracy</li>
+                        <li>Conducted data-driven hypothesis testing, demonstrating a 30% reduction in faulty piece throughput through the combination of defect detection and predictive maintenance</li>
                     </ul>
                 </div>
 
@@ -228,8 +253,8 @@
                 <h2>Technical Skills</h2>
                 <div class="skills-list">
                     <p><strong>Programming:</strong> Python, MATLAB, C++</p>
-                    <p><strong>AI/ML and Robotics:</strong> TensorFlow, Keras, PyTorch, Numpy, Pandas, Matplotlib, OpenCV, Sk-Learn, Linux, ROS</p>
-                    <p><strong>Design and Analysis:</strong> Solidworks, Autodesk Inventor, Fusion360, Ansys Structural</p>
+                    <p><strong>AI/ML and Robotics:</strong> TensorFlow, Keras, PyTorch, Numpy, Pandas, Matplotlib, OpenCV, Scikit-Learn, Linux, ROS, MuJoCo</p>
+                    <p><strong>Design and Analysis:</strong> Solidworks, Autodesk Inventor, Fusion360, Ansys Structural, Rapid Prototyping</p>
                 </div>
             </section>
         </div>
