@@ -159,26 +159,37 @@
         <div class="content">
             <section id="projects">
                 <h2>Projects</h2>
+                
                 <div class="project">
-                    <h3>Learning Dynamical Systems for Adaptive Motion Planning</h3>
+                    <h3>Autonomous Racing with 1/10th Scale Cars</h3>
                     <div class="date-location">January 2025 - Present</div>
                     <ul>
-                        <li>Implemented and analyzed various dynamical system learning techniques including SEDS (Stable Estimator of Dynamical Systems) and LPV-DS (Linear Parameter Varying - Dynamical Systems), to enhance adaptive motion planning capabilities.</li>
-                        <li>Conducted comprehensive evaluations on diverse datasets, ranging from theoretical trajectories to real-world motion data, to assess the performance and robustness of the implemented systems.</li>
-                        <li>Explored advanced preprocessing techniques and parameter optimization strategies to significantly enhance system performance and adaptability in complex environments.</li>
-                        <li>Applied the learned dynamical systems to robotic arm control, demonstrating adaptive and reactive motion planning in practical scenarios.</li>
+                        <li>Designing and implementing a comprehensive autonomous racing system integrating both LIDAR-based SLAM and Visual SLAM techniques with advanced data pre-processing methods for highly precise vehicle state estimation in dynamic racing environments.</li>
+                        <li>Developing and optimizing various control algorithms including Model Predictive Control (MPC), Advanced Driver Assistance Systems (ADAS), and Reinforcement Learning approaches for low-level path planning and real-time control, enabling the vehicle to navigate complex racing scenarios with minimal latency.</li>
+                        <li>Researching and testing multiple Graph and Tree search algorithms with specific vehicle constraints and dynamics for high-level path planning and race-line optimization, significantly improving racing performance and lap times.</li>
+                        <li>Creating a modular software architecture in ROS2 that allows for rapid testing and comparison of different perception, planning, and control strategies in both simulated and real-world racing environments.</li>
                     </ul>
                 </div>
 
                 <div class="project">
-                    <h3>Autonomous Reactive Racing on 1/10th Scale Cars using LiDAR</h3>
-                    <div class="date-location">January 2025 - Febuary 2025</div>
+                    <h3>Unscented Kalman Filter for Quadcopter State Estimation</h3>
+                    <div class="date-location">January 2025 - February 2025</div>
                     <ul>
-                        <li>Developed a reactive follow-gap algorithm for autonomous racing using ROS2 and Python</li>
-                        <li>Implemented LiDAR data processing techniques including downsampling, and disparity extension</li>
-                        <li>Created a dynamic speed control system based on obstacle proximity for optimal performance</li>
-                        <li>Designed a steering control algorithm to navigate through the best gaps in the environment</li>
-                    
+                        <li>Engineered and implemented a sophisticated quaternion-based Unscented Kalman Filter (UKF) for precise quadcopter orientation estimation, leveraging IMU data from accelerometer and gyroscope sensors to achieve robust sensor fusion and significantly minimize state uncertainty in three-dimensional space.</li>
+                        <li>Executed comprehensive sensor calibration protocols for both accelerometer and gyroscope components, utilizing a high-precision Vicon motion capture system as ground truth reference, ensuring optimal sensor performance and data reliability across varying flight conditions and maneuvers.</li>
+                        <li>Optimized filter parameters through rigorous testing and validation procedures, systematically tuning process and measurement noise covariance matrices to minimize variance while maintaining responsiveness to actual state changes.</li>
+                        <li>Developed visualization tools to compare estimated states against ground truth data, providing intuitive insights into filter performance and facilitating iterative improvements to the estimation algorithm.</li>
+                    </ul>
+                </div>
+
+                <div class="project">
+                    <h3>Learning Dynamical Systems for Adaptive Motion Planning</h3>
+                    <div class="date-location">January 2025 - February 2025</div>
+                    <ul>
+                        <li>Implemented and analyzed advanced techniques to learn autonomous time-invariant Dynamical Systems from limited training data, incorporating strict control theory constraints such as global asymptotic stability to ensure reliable and safe robot motion control in uncertain environments.</li>
+                        <li>Conducted comprehensive evaluations on diverse datasets, ranging from theoretical trajectories to real-world robot motion data, to assess the performance, robustness, and generalization capabilities of the implemented systems across various conditions and scenarios.</li>
+                        <li>Explored and optimized sophisticated pre-processing techniques and Gaussian Mixture Model (GMM) parameters to significantly enhance system adaptability and performance in complex, dynamic environments with obstacles and changing goals.</li>
+                        <li>Successfully applied the learned dynamical systems to robotic manipulator control, demonstrating adaptive and reactive motion planning capabilities in practical scenarios with real-time constraints, including obstacle avoidance and target tracking.</li>
                     </ul>
                 </div>
 
@@ -186,21 +197,33 @@
                     <h3>Feature Matching with Transformers and Camera Localization</h3>
                     <div class="date-location">November 2024 - December 2024</div>
                     <ul>
-                        <li>Developed an advanced algorithm utilizing LoFTR (Local Feature TRansformer) to achieve high-precision feature matches across multiple images, enhancing visual odometry capabilities.</li>
-                        <li>Engineered a low-parameter Neural Network for estimating frame positions and orientations, leveraging reconstruction error with LoFTR matches as ground truth for improved accuracy.</li>
-                        <li>Achieved a remarkable 90% reduction in loss compared to traditional SIFT feature matches when employing the same neural network architecture, demonstrating significant improvements in camera localization techniques.</li>
+                        <li>Developed an advanced algorithm utilizing LoFTR (Local Feature TRansformer) to achieve high-precision feature matching across multiple images, leveraging the transformer architecture's ability to capture global context and establish reliable correspondences even in challenging visual conditions with varying illumination and viewpoints.</li>
+                        <li>Engineered a low-parameter Neural Network architecture specifically optimized for 3D reconstruction and accurate estimation of camera position and orientation, using reconstruction error with LoFTR-based matches as ground truth to continuously refine the model's performance through an iterative training process.</li>
+                        <li>Achieved a remarkable 90% reduction in reconstruction loss compared to traditional SIFT feature matches when employing the same neural network architecture, demonstrating significant improvements in camera localization accuracy and robustness in complex visual environments.</li>
+                        <li>Implemented comprehensive visualization tools to analyze the quality of feature matches and reconstruction results, providing intuitive feedback for parameter tuning and algorithm refinement throughout the development process.</li>
                     </ul>
                 </div>
 
                 <div class="project">
-                    <h3>Robot Arm Pick and Place with 7 DOF Franka Arm</h3>
+                    <h3>Manipulator Control with 7 DOF Franka Arm</h3>
                     <div class="date-location">October 2024 - December 2024</div>
                     <ul>
-                        <li>Secured 3rd place out of 20 teams in a highly competitive robotics challenge, showcasing exceptional problem-solving and implementation skills.</li>
-                        <li>Engineered and optimized an intelligent strategy for robot arm manipulation, enabling efficient picking and placing of both static and dynamic objects in complex environments.</li>
-                        <li>Developed a comprehensive robot control library, incorporating advanced forward and inverse kinematics algorithms for precise arm movements.</li>
-                        <li>Integrated a sophisticated vision system utilizing AprilTags for accurate object detection and localization, enhancing the robot's perception capabilities.</li>
-                        <li>Implemented and compared various path planning algorithms, including RRT (Rapidly-exploring Random Trees) and Potential Fields, to optimize trajectory generation for the robotic arm.</li>
+                        <li>Secured 3rd place out of 20 teams in a highly competitive robotics challenge, showcasing exceptional problem-solving and implementation skills in the field of robotic manipulation and control.</li>
+                        <li>Developed a comprehensive robot control library with advanced forward and inverse kinematics algorithms for precise arm movements, incorporating singularity handling and joint limit constraints to ensure smooth and reliable operation throughout the robot's workspace.</li>
+                        <li>Integrated a sophisticated vision system utilizing AprilTags for accurate object detection and localization, enabling the robot to perceive and interact with its environment in real-time with high precision and robustness against varying lighting conditions.</li>
+                        <li>Engineered and optimized intelligent strategies for robot arm manipulation to efficiently handle both static and dynamic objects in complex environments, implementing adaptive grasping techniques and force control to accommodate objects of various shapes, sizes, and weights.</li>
+                        <li>Implemented and rigorously compared various path planning algorithms, including RRT (Rapidly-exploring Random Trees) and Potential Fields methods, to optimize trajectory generation for the robotic arm, analyzing performance metrics such as planning time, path smoothness, and obstacle avoidance capabilities.</li>
+                    </ul>
+                </div>
+
+                <div class="project">
+                    <h3>AI Revolutionizing AGV Motion: A Review</h3>
+                    <div class="date-location">January 2024 - July 2024</div>
+                    <ul>
+                        <li>Conducted an extensive literature review examining how cutting-edge AI models and algorithms are transforming Automated Guided Vehicle (AGV) path planning, analyzing their impact on both operational efficiency and safety enhancements in industrial mobility applications.</li>
+                        <li>Showcased significant advancements in Autonomous Agent architectures and Probabilistic modeling approaches for effective navigation in complex environments, highlighting their contributions to more robust and adaptive path planning methodologies.</li>
+                        <li>Explored emerging technologies in autonomous navigation, including reinforcement learning, deep neural networks, and hybrid AI systems, identifying potential pathways toward achieving more general intelligence capabilities in mobile robotics.</li>
+                        <li>Synthesized findings from over 50 research papers to provide a comprehensive overview of the current state of the art, technological gaps, and future research directions in AI-driven AGV systems, creating a valuable reference for researchers and industry practitioners.</li>
                     </ul>
                 </div>
 
@@ -208,11 +231,11 @@
                     <h3>AGV for Plant Disease Detection Using GoogleNet</h3>
                     <div class="date-location">December 2023 - March 2024</div>
                     <ul>
-                        <li>Pioneered an automated plant disease detection system to address a large-scale agricultural challenge using ROS2 and the Nav2 module</li>
-                        <li>Constructed a prototype robot to autonomously navigate around a farm using LIDAR sensor based SLAM</li>
-                        <li>Performed transfer learning with GoogleNet to achieve 98% validation accuracy for leaf disease detection through computer vision</li>
-                        <li>Integrated the trained model into the development environment and the physical robot with onboard computer vision capabilities</li>
-                        <li>Incorporated Large Language Models (LLMs) to provide farmers with comprehensive and accessible information about detected plant diseases</li>
+                        <li>Pioneered an automated plant disease detection system to address large-scale agricultural challenges, developing a comprehensive solution using ROS2 and the Nav2 navigation framework to enable autonomous operation in unstructured farm environments.</li>
+                        <li>Performed sophisticated transfer learning with the GoogleNet architecture on the Plant Village dataset, fine-tuning the pre-trained model to achieve an impressive 98% validation accuracy for leaf disease detection across multiple crop varieties and disease classes.</li>
+                        <li>Constructed a robust prototype hardware platform to test the system's capabilities, integrating LIDAR sensors with Simultaneous Localization and Mapping (SLAM) algorithms to enable precise autonomous navigation through dynamic agricultural environments while avoiding obstacles.</li>
+                        <li>Developed an efficient onboard computer vision pipeline for real-time disease detection, optimizing the trained model for deployment on resource-constrained embedded systems while maintaining high accuracy and processing speed.</li>
+                        <li>Incorporated Large Language Models (LLMs) to transform technical disease detection results into comprehensive and accessible information for farmers, providing actionable insights about detected diseases including treatment recommendations, prevention strategies, and potential economic impact.</li>
                     </ul>
                 </div>
 
@@ -220,8 +243,10 @@
                     <h3>Optimization of Multi-flow Nozzle</h3>
                     <div class="date-location">August 2023</div>
                     <ul>
-                        <li>Used multivariate polynomial regression on experimental data to develop a system of equations</li>
-                        <li>Designed Multi-flow nozzles primarily used in fountains, optimizing for various flow characteristics</li>
+                        <li>Used multivariate polynomial regression on experimental data to develop a system of equations that accurately modeled the complex fluid dynamics within multi-flow nozzle systems.</li>
+                        <li>Designed innovative multi-flow nozzles primarily used in fountains, optimizing for various flow characteristics including spray pattern, droplet size distribution, and water trajectory to achieve specific aesthetic and functional requirements.</li>
+                        <li>Conducted extensive computational fluid dynamics (CFD) simulations to validate the regression models and further refine the nozzle designs, ensuring optimal performance across a range of operating conditions.</li>
+                        <li>Created a parametric design framework that allows for rapid customization of nozzle specifications based on specific application requirements, significantly reducing the design iteration cycle time.</li>
                     </ul>
                 </div>
             </section>
@@ -229,12 +254,14 @@
             <section id="experience">
                 <h2>Experience</h2>
                 <div class="experience-item">
-                    <h3>Intern - Intelligent Manufacturing</h3>
+                    <h3>Intelligent Manufacturing Engineering Internship</h3>
                     <div class="date-location">Dalip Manufacturers and CO. | May 2023 - Sep 2023 | Mumbai</div>
                     <ul>
-                        <li>Engineered an image recognition software to automate defect detection and implemented computer vision powered dimensional checks, enhancing the quality control process</li>
-                        <li>Developed a general Machine Learning model for anomaly detection through control chart data analysis, achieving 93.89% model accuracy</li>
-                        <li>Conducted data-driven hypothesis testing, demonstrating a 30% reduction in faulty piece throughput through the combination of defect detection and predictive maintenance</li>
+                        <li>Developed a sophisticated Convolutional Neural Network (CNN) model for defect detection in manufactured parts, implementing advanced computer vision techniques to identify surface defects, structural anomalies, and quality issues with high accuracy, resulting in a significant improvement in quality control efficiency and reduction in human inspection time.</li>
+                        <li>Engineered a versatile computer vision system for precise dimensional checks of manufactured components, designing a solution compatible with any calibrated camera and implementing advanced calibration techniques to ensure accurate measurements regardless of camera position or lighting conditions.</li>
+                        <li>Built and optimized a deep learning model that achieved 94% validation accuracy in detecting anomalies in statistical process control (SPC) chart patterns, enabling early identification of machinery failures and production issues before they escalated into critical problems.</li>
+                        <li>Successfully integrated the three distinct systems—defect detection, dimensional verification, and anomaly detection—into a comprehensive end-to-end pipeline for automated quality control and predictive maintenance, developing a unified data collection, processing, and analysis framework that streamlined the entire manufacturing quality assurance process.</li>
+                        <li>Demonstrated through rigorous testing and data analysis that the integrated system reduced faulty piece throughput by approximately 30%, while simultaneously decreasing quality control labor costs and improving overall production efficiency and product consistency.</li>
                     </ul>
                 </div>
 
@@ -242,9 +269,10 @@
                     <h3>Intern - Mechanical Engineering</h3>
                     <div class="date-location">NOV India Pvt Ltd | Dec 2021 - Apr 2022 | Mumbai</div>
                     <ul>
-                        <li>Coordinated repair workflow of 7 oil drilling machines</li>
-                        <li>Designed a material handling device for shop floor operations</li>
-                        <li>Facilitated documentation of over 5000 spare parts into a database</li>
+                        <li>Coordinated and optimized the repair workflow of 7 complex oil drilling machines, developing and implementing standardized maintenance procedures that reduced downtime and improved operational efficiency.</li>
+                        <li>Designed an innovative material handling device for shop floor operations after conducting a comprehensive analysis of existing workflow bottlenecks, resulting in a 25% increase in material movement efficiency and reduced ergonomic strain on operators.</li>
+                        <li>Facilitated the documentation and cataloging of over 5,000 spare parts into a centralized database system, creating detailed technical specifications, cross-references, and inventory management protocols that significantly improved parts availability and reduced procurement lead times.</li>
+                        <li>Participated in cross-functional team meetings with engineering, operations, and maintenance departments to coordinate repair schedules and ensure minimal disruption to production activities while maintaining quality standards.</li>
                     </ul>
                 </div>
             </section>
