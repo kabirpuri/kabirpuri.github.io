@@ -7,10 +7,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary: #2563eb;
-            --primary-dark: #1d4ed8;
-            --secondary: #64748b;
-            --accent: #3b82f6;
+            --primary: #000000;
+            --primary-dark: #1a1a1a;
+            --secondary: #333333;
+            --accent: #444444;
             --text: #1e293b;
             --text-light: #64748b;
             --bg: #ffffff;
@@ -18,7 +18,7 @@
             --border: #e2e8f0;
             --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1);
             --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
-            --gradient: linear-gradient(135deg, var(--primary), var(--accent));
+            --gradient: linear-gradient(135deg, var(--primary), var(--secondary));
         }
 
         * {
@@ -38,7 +38,7 @@
         .header {
             background: var(--gradient);
             color: white;
-            padding: 3rem 0;
+            padding: 2rem 0;
             position: relative;
             overflow: hidden;
         }
@@ -63,40 +63,27 @@
         }
 
         .hero {
-            display: grid;
-            grid-template-columns: 1fr auto;
-            gap: 2rem;
+            display: flex;
             align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
         }
 
-        .hero-content h1 {
+        .hero h1 {
             font-size: clamp(2.5rem, 5vw, 3.5rem);
             font-weight: 700;
-            margin-bottom: 0.5rem;
             background: linear-gradient(45deg, #fff, #e0e7ff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
 
-        .hero-content .subtitle {
-            font-size: 1.25rem;
-            opacity: 0.9;
-            margin-bottom: 1rem;
-        }
-
-        .hero-content .description {
-            font-size: 1.1rem;
-            opacity: 0.8;
-            margin-bottom: 2rem;
-            max-width: 600px;
-        }
-
         .profile-image {
-            width: 150px;
-            height: 150px;
+            width: 200px;
+            height: 200px;
             border-radius: 50%;
-            border: 3px solid rgba(255,255,255,0.3);
+            border: 4px solid rgba(255,255,255,0.3);
             object-fit: cover;
             box-shadow: var(--shadow-lg);
         }
@@ -105,6 +92,8 @@
             display: flex;
             gap: 1rem;
             flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 1.5rem;
         }
 
         .contact-link {
@@ -438,9 +427,8 @@
         /* Mobile Responsiveness */
         @media (max-width: 768px) {
             .hero {
-                grid-template-columns: 1fr;
+                flex-direction: column;
                 text-align: center;
-                gap: 1.5rem;
             }
 
             .nav-links {
@@ -509,13 +497,9 @@
     <header class="header">
         <div class="container">
             <div class="hero">
-                <div class="hero-content">
+                <div style="display: flex; flex-direction: column; align-items: center; gap: 1rem;">
                     <h1>Kabir Puri</h1>
-                    <p class="subtitle">Robotics Engineer & AI Researcher</p>
-                    <p class="description">
-                        Masters student in Robotics at University of Pennsylvania, specializing in autonomous systems, 
-                        computer vision, and machine learning with a passion for developing innovative solutions for real-world challenges.
-                    </p>
+                    <img src="profile.jpg" alt="Kabir Puri" class="profile-image">
                     <div class="contact-links">
                         <a href="mailto:kapuri@seas.upenn.edu" class="contact-link">
                             <i class="fas fa-envelope"></i>
@@ -529,13 +513,8 @@
                             <i class="fab fa-linkedin"></i>
                             LinkedIn
                         </a>
-                        <a href="tel:848-997-8623" class="contact-link">
-                            <i class="fas fa-phone"></i>
-                            Call
-                        </a>
                     </div>
                 </div>
-                <img src="profile.jpg" alt="Kabir Puri" class="profile-image">
             </div>
         </div>
     </header>
@@ -594,29 +573,30 @@
             <section id="projects" class="section">
                 <h2 class="section-title">Featured Projects</h2>
                 <div class="projects-grid">
-                    <!-- Project 1 -->
+                    <!-- Project 1: End-to-End Autonomous Racing with BiLSTM-Attention -->
                     <div class="project-card fade-in">
                         <div class="project-image">
-                            <!-- Add your actual image here: <img src="autonomous-racing.jpg" alt="Autonomous Racing"> -->
+                            <!-- Add your actual image here: <img src="recurrent-lidarnet.jpg" alt="Recurrent LidarNet"> -->
                             <div class="project-placeholder">
-                                <i class="fas fa-car"></i>
-                                <span>Autonomous Racing</span>
+                                <i class="fas fa-brain"></i>
+                                <span>Recurrent LidarNet</span>
                             </div>
                         </div>
                         <div class="project-content">
-                            <h3 class="project-title">Autonomous Racing with 1/10th Scale Cars</h3>
-                            <p class="project-date">January 2025 - Present</p>
+                            <h3 class="project-title">End-to-End Autonomous Racing with BiLSTM-Attention</h3>
+                            <p class="project-date">January 2025 - May 2025</p>
                             <p class="project-description">
-                                Comprehensive autonomous racing system integrating LIDAR-based SLAM and Visual SLAM 
-                                with advanced preprocessing for precise vehicle state estimation. Features multiple 
-                                control algorithms including MPC, ADAS, and RL approaches for optimal racing performance.
+                                Built Recurrent LidarNet, an end-to-end neural network that maps raw 2D LIDAR scans 
+                                to steering and throttle commands using temporal convolution, bidirectional LSTM, and 
+                                attention layers. Achieved 43% lower steering variance and 61.6% reduced speed variance 
+                                compared to TinyLidarNet.
                             </p>
                             <div class="project-tech">
-                                <span class="tech-tag">ROS2</span>
-                                <span class="tech-tag">SLAM</span>
-                                <span class="tech-tag">MPC</span>
-                                <span class="tech-tag">Reinforcement Learning</span>
-                                <span class="tech-tag">Computer Vision</span>
+                                <span class="tech-tag">BiLSTM</span>
+                                <span class="tech-tag">Attention Networks</span>
+                                <span class="tech-tag">LIDAR</span>
+                                <span class="tech-tag">NVIDIA Jetson</span>
+                                <span class="tech-tag">PyTorch</span>
                             </div>
                             <div class="project-links">
                                 <a href="#" class="project-btn primary">
@@ -631,7 +611,83 @@
                         </div>
                     </div>
 
-                    <!-- Project 2 -->
+                    <!-- Project 2: SBAMP -->
+                    <div class="project-card fade-in">
+                        <div class="project-image">
+                            <!-- Add your actual image here: <img src="sbamp.jpg" alt="SBAMP"> -->
+                            <div class="project-placeholder">
+                                <i class="fas fa-route"></i>
+                                <span>SBAMP</span>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">SBAMP - Sampling Based Adaptive Motion Planning</h3>
+                            <p class="project-date">January 2025 - May 2025</p>
+                            <p class="project-description">
+                                Built SBAMP, a real-time motion planning system combining RRT* global planning with 
+                                Lyapunov-stable local control for dynamic environments. Enabled robust recovery from 
+                                large disturbances at 60Hz control rates, with near-100% success in simulation and 
+                                on F1/10 hardware.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">RRT*</span>
+                                <span class="tech-tag">Lyapunov Control</span>
+                                <span class="tech-tag">ROS2</span>
+                                <span class="tech-tag">Motion Planning</span>
+                                <span class="tech-tag">F1/10</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-btn primary">
+                                    <i class="fab fa-github"></i>
+                                    View Code
+                                </a>
+                                <a href="#" class="project-btn secondary">
+                                    <i class="fas fa-file-alt"></i>
+                                    Report
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3: Training Diffusion Models With Reinforcement Learning -->
+                    <div class="project-card fade-in">
+                        <div class="project-image">
+                            <!-- Add your actual image here: <img src="ddpo.jpg" alt="DDPO"> -->
+                            <div class="project-placeholder">
+                                <i class="fas fa-wave-square"></i>
+                                <span>Diffusion RL</span>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Training Diffusion Models With Reinforcement Learning</h3>
+                            <p class="project-date">March 2025 - Present</p>
+                            <p class="project-description">
+                                Adapted the Denoising Diffusion Policy Optimization (DDPO) framework for discrete 
+                                reinforcement learning, modifying open-source code to train agents in the challenging 
+                                FrozenLake-v1 environment. Investigating reward shaping and advanced RL techniques to 
+                                accelerate convergence and improve policy robustness.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Diffusion Models</span>
+                                <span class="tech-tag">DDPO</span>
+                                <span class="tech-tag">Reinforcement Learning</span>
+                                <span class="tech-tag">PyTorch</span>
+                                <span class="tech-tag">JAX</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-btn primary">
+                                    <i class="fab fa-github"></i>
+                                    View Code
+                                </a>
+                                <a href="#" class="project-btn secondary">
+                                    <i class="fas fa-file-alt"></i>
+                                    Report
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 4: Unscented Kalman Filter -->
                     <div class="project-card fade-in">
                         <div class="project-image">
                             <!-- Add your actual image here: <img src="ukf-quadcopter.jpg" alt="UKF Quadcopter"> -->
@@ -668,44 +724,7 @@
                         </div>
                     </div>
 
-                    <!-- Project 3 -->
-                    <div class="project-card fade-in">
-                        <div class="project-image">
-                            <!-- Add your actual image here: <img src="dynamical-systems.jpg" alt="Dynamical Systems"> -->
-                            <div class="project-placeholder">
-                                <i class="fas fa-robot"></i>
-                                <span>Motion Planning</span>
-                            </div>
-                        </div>
-                        <div class="project-content">
-                            <h3 class="project-title">Learning Dynamical Systems for Adaptive Motion Planning</h3>
-                            <p class="project-date">January 2025 - February 2025</p>
-                            <p class="project-description">
-                                Implementation of autonomous time-invariant dynamical systems with global asymptotic 
-                                stability constraints for safe robot motion control. Features GMM optimization and 
-                                successful application to robotic manipulator control.
-                            </p>
-                            <div class="project-tech">
-                                <span class="tech-tag">Dynamical Systems</span>
-                                <span class="tech-tag">Motion Planning</span>
-                                <span class="tech-tag">GMM</span>
-                                <span class="tech-tag">Control Theory</span>
-                                <span class="tech-tag">Python</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="#" class="project-btn primary">
-                                    <i class="fab fa-github"></i>
-                                    View Code
-                                </a>
-                                <a href="#" class="project-btn secondary">
-                                    <i class="fas fa-file-alt"></i>
-                                    Report
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Project 4 -->
+                    <!-- Project 5: Feature Matching with Transformers -->
                     <div class="project-card fade-in">
                         <div class="project-image">
                             <!-- Add your actual image here: <img src="feature-matching.jpg" alt="Feature Matching"> -->
@@ -742,44 +761,7 @@
                         </div>
                     </div>
 
-                    <!-- Project 5 -->
-                    <div class="project-card fade-in">
-                        <div class="project-image">
-                            <!-- Add your actual image here: <img src="franka-arm.jpg" alt="Franka Arm"> -->
-                            <div class="project-placeholder">
-                                <i class="fas fa-cog"></i>
-                                <span>Manipulator Control</span>
-                            </div>
-                        </div>
-                        <div class="project-content">
-                            <h3 class="project-title">Manipulator Control with 7 DOF Franka Arm</h3>
-                            <p class="project-date">October 2024 - December 2024</p>
-                            <p class="project-description">
-                                Comprehensive robot control system with advanced kinematics, vision-based object 
-                                detection using AprilTags, and intelligent manipulation strategies. Includes comparison 
-                                of path planning algorithms like RRT and Potential Fields.
-                            </p>
-                            <div class="project-tech">
-                                <span class="tech-tag">Robotics</span>
-                                <span class="tech-tag">Kinematics</span>
-                                <span class="tech-tag">AprilTags</span>
-                                <span class="tech-tag">Path Planning</span>
-                                <span class="tech-tag">RRT</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="#" class="project-btn primary">
-                                    <i class="fab fa-github"></i>
-                                    View Code
-                                </a>
-                                <a href="#" class="project-btn secondary">
-                                    <i class="fas fa-file-alt"></i>
-                                    Report
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Project 6 -->
+                    <!-- Project 6: AGV Plant Disease Detection -->
                     <div class="project-card fade-in">
                         <div class="project-image">
                             <!-- Add your actual image here: <img src="plant-disease.jpg" alt="Plant Disease Detection"> -->
@@ -792,15 +774,16 @@
                             <h3 class="project-title">AGV for Plant Disease Detection Using GoogleNet</h3>
                             <p class="project-date">December 2023 - March 2024</p>
                             <p class="project-description">
-                                Innovative agricultural solution combining autonomous navigation with AI-powered disease 
-                                detection. Features GoogleNet transfer learning achieving 98% accuracy, LIDAR-based 
-                                SLAM navigation, and LLM integration for farmer-friendly recommendations.
+                                Worked on the complete development of automated plant disease detection robot using 
+                                ROS2, Nav2 and Machine Learning. Performed Transfer Learning with GoogleNet to achieve 
+                                98% validation accuracy for leaf disease detection and integrated LLMs to provide 
+                                farmers with comprehensive information.
                             </p>
                             <div class="project-tech">
                                 <span class="tech-tag">Agriculture</span>
                                 <span class="tech-tag">GoogleNet</span>
                                 <span class="tech-tag">Transfer Learning</span>
-                                <span class="tech-tag">SLAM</span>
+                                <span class="tech-tag">ROS2</span>
                                 <span class="tech-tag">LLM</span>
                             </div>
                             <div class="project-links">
@@ -824,29 +807,16 @@
                 <div class="experience-list">
                     <div class="experience-item fade-in">
                         <div class="experience-header">
-                            <h3 class="experience-title">Intelligent Manufacturing Engineering Intern</h3>
-                            <p class="experience-company">Dalip Manufacturers and CO.</p>
+                            <h3 class="experience-title">Intelligent Manufacturing and Automation Intern</h3>
+                            <p class="experience-company">Dalip Manufacturers and Co.</p>
                             <p class="experience-date">May 2023 - September 2023 | Mumbai, India</p>
                         </div>
                         <p class="experience-description">
-                            Developed sophisticated CNN models for defect detection achieving 94% validation accuracy 
-                            in anomaly detection for statistical process control. Created an integrated quality control 
-                            pipeline that reduced faulty piece throughput by 30% while decreasing labor costs through 
-                            automated dimensional verification and predictive maintenance systems.
-                        </p>
-                    </div>
-
-                    <div class="experience-item fade-in">
-                        <div class="experience-header">
-                            <h3 class="experience-title">Mechanical Engineering Intern</h3>
-                            <p class="experience-company">NOV India Pvt Ltd</p>
-                            <p class="experience-date">December 2021 - April 2022 | Mumbai, India</p>
-                        </div>
-                        <p class="experience-description">
-                            Optimized repair workflows for 7 complex oil drilling machines and designed innovative 
-                            material handling devices that increased efficiency by 25%. Led the documentation and 
-                            cataloging of over 5,000 spare parts into a centralized database system, significantly 
-                            improving parts availability and reducing procurement lead times.
+                            Developed a CNN model for defect detection in manufactured parts, improving quality control 
+                            efficiency. Engineered a computer vision system for dimensional checks, compatible with any 
+                            calibrated camera. Built a deep learning model with 94% validation accuracy to detect anomalies 
+                            in control chart patterns. Integrated the 3 systems into an end-to-end pipeline for automated 
+                            quality control and predictive maintenance.
                         </p>
                     </div>
                 </div>
@@ -857,20 +827,23 @@
                 <h2 class="section-title">Technical Skills</h2>
                 <div class="skills-grid">
                     <div class="skill-category">
-                        <h3>Programming Languages</h3>
+                        <h3>Languages and Computing</h3>
                         <div class="skill-tags">
                             <span class="skill-tag">Python</span>
                             <span class="skill-tag">MATLAB</span>
                             <span class="skill-tag">C++</span>
-                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">Docker</span>
+                            <span class="skill-tag">Git</span>
+                            <span class="skill-tag">Linux</span>
                         </div>
                     </div>
 
                     <div class="skill-category">
                         <h3>AI/ML & Robotics</h3>
                         <div class="skill-tags">
-                            <span class="skill-tag">TensorFlow</span>
                             <span class="skill-tag">PyTorch</span>
+                            <span class="skill-tag">TensorFlow</span>
+                            <span class="skill-tag">JAX</span>
                             <span class="skill-tag">OpenCV</span>
                             <span class="skill-tag">ROS/ROS2</span>
                             <span class="skill-tag">MuJoCo</span>
@@ -879,12 +852,12 @@
                     </div>
 
                     <div class="skill-category">
-                        <h3>Data Science</h3>
+                        <h3>Hardware & Platforms</h3>
                         <div class="skill-tags">
-                            <span class="skill-tag">NumPy</span>
-                            <span class="skill-tag">Pandas</span>
-                            <span class="skill-tag">Matplotlib</span>
-                            <span class="skill-tag">Scikit-Learn</span>
+                            <span class="skill-tag">Jetson</span>
+                            <span class="skill-tag">Raspberry Pi</span>
+                            <span class="skill-tag">NVIDIA Hardware</span>
+                            <span class="skill-tag">Embedded Systems</span>
                         </div>
                     </div>
 
