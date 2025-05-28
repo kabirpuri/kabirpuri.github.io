@@ -3,289 +3,958 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kabir Puri</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Kabir Puri - Robotics Engineer & AI Researcher</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary-color: #1a237e;
-            --secondary-color: #0d47a1;
-            --text-color: #333;
-            --background-color: #ffffff;
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #64748b;
+            --accent: #3b82f6;
+            --text: #1e293b;
+            --text-light: #64748b;
+            --bg: #ffffff;
+            --bg-light: #f8fafc;
+            --border: #e2e8f0;
+            --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+            --gradient: linear-gradient(135deg, var(--primary), var(--accent));
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            background-color: var(--background-color);
-            color: var(--text-color);
+            color: var(--text);
+            background: var(--bg);
         }
 
-        .main-container {
-            display: flex;
-            max-width: 1400px;
+        /* Header */
+        .header {
+            background: var(--gradient);
+            color: white;
+            padding: 3rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 80%, rgba(255,255,255,0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(255,255,255,0.1) 0%, transparent 50%);
+        }
+
+        .container {
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
-            gap: 40px;
+            padding: 0 1rem;
+            position: relative;
+            z-index: 1;
         }
 
-        .sidebar {
-            width: 300px;
-            position: sticky;
-            top: 20px;
-            height: fit-content;
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 2rem;
+            align-items: center;
         }
 
-        .profile-img {
-            width: 100%;
-            max-width: 300px;
-            margin-bottom: 20px;
+        .hero-content h1 {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(45deg, #fff, #e0e7ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
-        .content {
-            flex: 1;
-            padding: 0 20px;
+        .hero-content .subtitle {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            margin-bottom: 1rem;
         }
 
-        .contact-info {
-            margin: 20px 0;
+        .hero-content .description {
+            font-size: 1.1rem;
+            opacity: 0.8;
+            margin-bottom: 2rem;
+            max-width: 600px;
         }
 
-        .contact-item {
-            display: block;
-            margin: 10px 0;
-            color: var(--text-color);
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 3px solid rgba(255,255,255,0.3);
+            object-fit: cover;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .contact-links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: rgba(255,255,255,0.1);
+            color: white;
             text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
         }
 
-        .contact-item:hover {
-            color: var(--primary-color);
+        .contact-link:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-2px);
         }
 
-        .contact-item i {
-            width: 20px;
-            color: var(--primary-color);
+        /* Navigation */
+        .nav {
+            background: var(--bg);
+            padding: 1rem 0;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
 
-        section {
-            margin-bottom: 40px;
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            list-style: none;
         }
 
-        h2 {
-            color: var(--primary-color);
-            border-bottom: 2px solid var(--secondary-color);
-            padding-bottom: 10px;
-            margin-top: 30px;
+        .nav-link {
+            color: var(--text);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            font-weight: 500;
         }
 
-        h3 {
-            color: var(--primary-color);
-            margin-bottom: 5px;
+        .nav-link:hover,
+        .nav-link.active {
+            background: var(--primary);
+            color: white;
         }
 
-        .date-location {
-            color: #666;
-            font-size: 0.9em;
-            margin: 5px 0;
+        /* Main Content */
+        .main {
+            padding: 3rem 0;
         }
 
-        ul {
-            list-style-type: disc;
-            padding-left: 20px;
-            margin-top: 10px;
+        .section {
+            margin-bottom: 4rem;
         }
 
-        .education-brief {
-            margin: 20px 0;
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 3rem;
+            text-align: center;
+            position: relative;
         }
 
-        .skills-list {
-            margin-top: 10px;
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: var(--gradient);
+            border-radius: 2px;
         }
 
-        .skills-list strong {
-            color: var(--primary-color);
+        /* About Section */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text);
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+        }
+
+        .courses-card {
+            background: var(--bg-light);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+        }
+
+        .courses-card h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .courses-list {
+            list-style: none;
+        }
+
+        .courses-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.95rem;
+        }
+
+        .courses-list li:last-child {
+            border-bottom: none;
+        }
+
+        /* Projects Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: var(--bg-light);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            border: 1px solid var(--border);
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            background: var(--gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .project-placeholder {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            opacity: 0.9;
+        }
+
+        .project-placeholder i {
+            font-size: 2.5rem;
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 0.5rem;
+        }
+
+        .project-date {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-description {
+            color: var(--text);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tech-tag {
+            background: var(--primary);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .project-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .project-btn.primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .project-btn.primary:hover {
+            background: var(--primary-dark);
+        }
+
+        .project-btn.secondary {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .project-btn.secondary:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* Experience */
+        .experience-list {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .experience-item {
+            background: var(--bg-light);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+        }
+
+        .experience-header {
+            margin-bottom: 1rem;
+        }
+
+        .experience-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-company {
+            color: var(--primary);
+            font-weight: 500;
+            margin-bottom: 0.25rem;
+        }
+
+        .experience-date {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .experience-description {
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .skill-category {
+            background: var(--bg-light);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+        }
+
+        .skill-category h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-tag {
+            background: var(--accent);
+            color: white;
+            padding: 0.4rem 0.8rem;
+            border-radius: 16px;
+            font-size: 0.9rem;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .hero {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 1.5rem;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .project-links {
+                flex-direction: column;
+            }
+
+            .contact-links {
+                justify-content: center;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 0.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .project-content {
+                padding: 1rem;
+            }
+        }
+
+        /* Smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 0.6s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
     </style>
 </head>
 <body>
-    <div class="main-container">
-        <div class="sidebar">
-            <section id="about">
-                <h2>About Me</h2>
-                <p>Currently pursuing my Masters of Science in Robotics at the University of Pennsylvania. My research interests span autonomous systems, computer vision, and machine learning, with a focus on developing innovative solutions for real-world challenges.</p>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="hero">
+                <div class="hero-content">
+                    <h1>Kabir Puri</h1>
+                    <p class="subtitle">Robotics Engineer & AI Researcher</p>
+                    <p class="description">
+                        Masters student in Robotics at University of Pennsylvania, specializing in autonomous systems, 
+                        computer vision, and machine learning with a passion for developing innovative solutions for real-world challenges.
+                    </p>
+                    <div class="contact-links">
+                        <a href="mailto:kapuri@seas.upenn.edu" class="contact-link">
+                            <i class="fas fa-envelope"></i>
+                            Email
+                        </a>
+                        <a href="https://github.com/kabirpuri" target="_blank" class="contact-link">
+                            <i class="fab fa-github"></i>
+                            GitHub
+                        </a>
+                        <a href="https://www.linkedin.com/in/kabir-puri-2633281b1/" target="_blank" class="contact-link">
+                            <i class="fab fa-linkedin"></i>
+                            LinkedIn
+                        </a>
+                        <a href="tel:848-997-8623" class="contact-link">
+                            <i class="fas fa-phone"></i>
+                            Call
+                        </a>
+                    </div>
+                </div>
+                <img src="profile.jpg" alt="Kabir Puri" class="profile-image">
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="container">
+            <ul class="nav-links">
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
+            <!-- About Section -->
+            <section id="about" class="section">
+                <h2 class="section-title">About Me</h2>
+                <div class="about-grid">
+                    <div class="about-text">
+                        <p>
+                            Currently pursuing my Masters of Science in Robotics at the University of Pennsylvania. 
+                            My research interests span autonomous systems, computer vision, and machine learning, 
+                            with a focus on developing innovative solutions for real-world challenges.
+                        </p>
+                        <p>
+                            I specialize in developing sophisticated algorithms for robotic perception and creating 
+                            adaptive control systems. My work ranges from autonomous racing systems to agricultural 
+                            AI solutions, always with an emphasis on practical applications that can make a meaningful impact.
+                        </p>
+                        <p>
+                            With experience in both academic research and industry applications, I bring a unique 
+                            perspective to robotics engineering, combining theoretical knowledge with hands-on 
+                            implementation skills.
+                        </p>
+                    </div>
+                    <div class="courses-card">
+                        <h3>Current Courses at UPenn</h3>
+                        <ul class="courses-list">
+                            <li>Learning in Robotics</li>
+                            <li>F1/10th Autonomous Racing</li>
+                            <li>Learning and Control for Adaptive and Reactive Robots</li>
+                            <li>Introduction to Robotics</li>
+                            <li>Machine Learning</li>
+                            <li>Machine Perception</li>
+                        </ul>
+                    </div>
+                </div>
             </section>
 
-            <img src="profile.jpg" alt="Kabir Puri" class="profile-img">
+            <!-- Projects Section -->
+            <section id="projects" class="section">
+                <h2 class="section-title">Featured Projects</h2>
+                <div class="projects-grid">
+                    <!-- Project 1 -->
+                    <div class="project-card fade-in">
+                        <div class="project-image">
+                            <!-- Add your actual image here: <img src="autonomous-racing.jpg" alt="Autonomous Racing"> -->
+                            <div class="project-placeholder">
+                                <i class="fas fa-car"></i>
+                                <span>Autonomous Racing</span>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Autonomous Racing with 1/10th Scale Cars</h3>
+                            <p class="project-date">January 2025 - Present</p>
+                            <p class="project-description">
+                                Comprehensive autonomous racing system integrating LIDAR-based SLAM and Visual SLAM 
+                                with advanced preprocessing for precise vehicle state estimation. Features multiple 
+                                control algorithms including MPC, ADAS, and RL approaches for optimal racing performance.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">ROS2</span>
+                                <span class="tech-tag">SLAM</span>
+                                <span class="tech-tag">MPC</span>
+                                <span class="tech-tag">Reinforcement Learning</span>
+                                <span class="tech-tag">Computer Vision</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-btn primary">
+                                    <i class="fab fa-github"></i>
+                                    View Code
+                                </a>
+                                <a href="#" class="project-btn secondary">
+                                    <i class="fas fa-file-alt"></i>
+                                    Report
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="project-card fade-in">
+                        <div class="project-image">
+                            <!-- Add your actual image here: <img src="ukf-quadcopter.jpg" alt="UKF Quadcopter"> -->
+                            <div class="project-placeholder">
+                                <i class="fas fa-helicopter"></i>
+                                <span>Quadcopter UKF</span>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Unscented Kalman Filter for Quadcopter State Estimation</h3>
+                            <p class="project-date">January 2025 - February 2025</p>
+                            <p class="project-description">
+                                Sophisticated quaternion-based UKF implementation for precise quadcopter orientation 
+                                estimation using IMU sensor fusion. Includes comprehensive sensor calibration with 
+                                Vicon motion capture validation and optimized filter parameters.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Kalman Filter</span>
+                                <span class="tech-tag">IMU</span>
+                                <span class="tech-tag">Sensor Fusion</span>
+                                <span class="tech-tag">Quaternions</span>
+                                <span class="tech-tag">MATLAB</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-btn primary">
+                                    <i class="fab fa-github"></i>
+                                    View Code
+                                </a>
+                                <a href="#" class="project-btn secondary">
+                                    <i class="fas fa-file-alt"></i>
+                                    Report
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="project-card fade-in">
+                        <div class="project-image">
+                            <!-- Add your actual image here: <img src="dynamical-systems.jpg" alt="Dynamical Systems"> -->
+                            <div class="project-placeholder">
+                                <i class="fas fa-robot"></i>
+                                <span>Motion Planning</span>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Learning Dynamical Systems for Adaptive Motion Planning</h3>
+                            <p class="project-date">January 2025 - February 2025</p>
+                            <p class="project-description">
+                                Implementation of autonomous time-invariant dynamical systems with global asymptotic 
+                                stability constraints for safe robot motion control. Features GMM optimization and 
+                                successful application to robotic manipulator control.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Dynamical Systems</span>
+                                <span class="tech-tag">Motion Planning</span>
+                                <span class="tech-tag">GMM</span>
+                                <span class="tech-tag">Control Theory</span>
+                                <span class="tech-tag">Python</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-btn primary">
+                                    <i class="fab fa-github"></i>
+                                    View Code
+                                </a>
+                                <a href="#" class="project-btn secondary">
+                                    <i class="fas fa-file-alt"></i>
+                                    Report
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 4 -->
+                    <div class="project-card fade-in">
+                        <div class="project-image">
+                            <!-- Add your actual image here: <img src="feature-matching.jpg" alt="Feature Matching"> -->
+                            <div class="project-placeholder">
+                                <i class="fas fa-eye"></i>
+                                <span>Computer Vision</span>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Feature Matching with Transformers and Camera Localization</h3>
+                            <p class="project-date">November 2024 - December 2024</p>
+                            <p class="project-description">
+                                Advanced computer vision system using LoFTR transformers for high-precision feature 
+                                matching and 3D reconstruction. Achieved 90% reduction in reconstruction loss compared 
+                                to traditional SIFT methods through optimized neural network architecture.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Computer Vision</span>
+                                <span class="tech-tag">Transformers</span>
+                                <span class="tech-tag">LoFTR</span>
+                                <span class="tech-tag">3D Reconstruction</span>
+                                <span class="tech-tag">PyTorch</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-btn primary">
+                                    <i class="fab fa-github"></i>
+                                    View Code
+                                </a>
+                                <a href="#" class="project-btn secondary">
+                                    <i class="fas fa-file-alt"></i>
+                                    Report
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 5 -->
+                    <div class="project-card fade-in">
+                        <div class="project-image">
+                            <!-- Add your actual image here: <img src="franka-arm.jpg" alt="Franka Arm"> -->
+                            <div class="project-placeholder">
+                                <i class="fas fa-cog"></i>
+                                <span>Manipulator Control</span>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Manipulator Control with 7 DOF Franka Arm</h3>
+                            <p class="project-date">October 2024 - December 2024</p>
+                            <p class="project-description">
+                                Comprehensive robot control system with advanced kinematics, vision-based object 
+                                detection using AprilTags, and intelligent manipulation strategies. Includes comparison 
+                                of path planning algorithms like RRT and Potential Fields.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Robotics</span>
+                                <span class="tech-tag">Kinematics</span>
+                                <span class="tech-tag">AprilTags</span>
+                                <span class="tech-tag">Path Planning</span>
+                                <span class="tech-tag">RRT</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-btn primary">
+                                    <i class="fab fa-github"></i>
+                                    View Code
+                                </a>
+                                <a href="#" class="project-btn secondary">
+                                    <i class="fas fa-file-alt"></i>
+                                    Report
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 6 -->
+                    <div class="project-card fade-in">
+                        <div class="project-image">
+                            <!-- Add your actual image here: <img src="plant-disease.jpg" alt="Plant Disease Detection"> -->
+                            <div class="project-placeholder">
+                                <i class="fas fa-leaf"></i>
+                                <span>Agricultural AI</span>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">AGV for Plant Disease Detection Using GoogleNet</h3>
+                            <p class="project-date">December 2023 - March 2024</p>
+                            <p class="project-description">
+                                Innovative agricultural solution combining autonomous navigation with AI-powered disease 
+                                detection. Features GoogleNet transfer learning achieving 98% accuracy, LIDAR-based 
+                                SLAM navigation, and LLM integration for farmer-friendly recommendations.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Agriculture</span>
+                                <span class="tech-tag">GoogleNet</span>
+                                <span class="tech-tag">Transfer Learning</span>
+                                <span class="tech-tag">SLAM</span>
+                                <span class="tech-tag">LLM</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-btn primary">
+                                    <i class="fab fa-github"></i>
+                                    View Code
+                                </a>
+                                <a href="#" class="project-btn secondary">
+                                    <i class="fas fa-file-alt"></i>
+                                    Report
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Experience Section -->
+            <section id="experience" class="section">
+                <h2 class="section-title">Professional Experience</h2>
+                <div class="experience-list">
+                    <div class="experience-item fade-in">
+                        <div class="experience-header">
+                            <h3 class="experience-title">Intelligent Manufacturing Engineering Intern</h3>
+                            <p class="experience-company">Dalip Manufacturers and CO.</p>
+                            <p class="experience-date">May 2023 - September 2023 | Mumbai, India</p>
+                        </div>
+                        <p class="experience-description">
+                            Developed sophisticated CNN models for defect detection achieving 94% validation accuracy 
+                            in anomaly detection for statistical process control. Created an integrated quality control 
+                            pipeline that reduced faulty piece throughput by 30% while decreasing labor costs through 
+                            automated dimensional verification and predictive maintenance systems.
+                        </p>
+                    </div>
+
+                    <div class="experience-item fade-in">
+                        <div class="experience-header">
+                            <h3 class="experience-title">Mechanical Engineering Intern</h3>
+                            <p class="experience-company">NOV India Pvt Ltd</p>
+                            <p class="experience-date">December 2021 - April 2022 | Mumbai, India</p>
+                        </div>
+                        <p class="experience-description">
+                            Optimized repair workflows for 7 complex oil drilling machines and designed innovative 
+                            material handling devices that increased efficiency by 25%. Led the documentation and 
+                            cataloging of over 5,000 spare parts into a centralized database system, significantly 
+                            improving parts availability and reducing procurement lead times.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Skills Section -->
+            <section id="skills" class="section">
+                <h2 class="section-title">Technical Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>Programming Languages</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">MATLAB</span>
+                            <span class="skill-tag">C++</span>
+                            <span class="skill-tag">JavaScript</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3>AI/ML & Robotics</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">TensorFlow</span>
+                            <span class="skill-tag">PyTorch</span>
+                            <span class="skill-tag">OpenCV</span>
+                            <span class="skill-tag">ROS/ROS2</span>
+                            <span class="skill-tag">MuJoCo</span>
+                            <span class="skill-tag">IsaacSim</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3>Data Science</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">NumPy</span>
+                            <span class="skill-tag">Pandas</span>
+                            <span class="skill-tag">Matplotlib</span>
+                            <span class="skill-tag">Scikit-Learn</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3>Design & Analysis</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">SolidWorks</span>
+                            <span class="skill-tag">Fusion360</span>
+                            <span class="skill-tag">ANSYS</span>
+                            <span class="skill-tag">3D Printing</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script>
+        // Smooth scrolling navigation
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                if (targetSection) {
+                    targetSection.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Active navigation highlighting
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('.section');
+            const navLinks = document.querySelectorAll('.nav-link');
             
-            <div class="education-brief">
-                <p><strong>Masters of Science in Robotics</strong><br>
-                University of Pennsylvania</p>
-            </div>
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
 
-            <div class="contact-info">
-                <span class="contact-item">
-                    <i class="fas fa-phone"></i>
-                    848-997-8623
-                </span>
-                <a href="mailto:kapuri@seas.upenn.edu" class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    kapuri@seas.upenn.edu
-                </a>
-                <a href="https://github.com/kabirpuri" target="_blank" class="contact-item">
-                    <i class="fab fa-github"></i>
-                    github.com/kabirpuri
-                </a>
-                <a href="https://www.linkedin.com/in/kabir-puri-2633281b1/" target="_blank" class="contact-item">
-                    <i class="fab fa-linkedin"></i>
-                    linkedin.com/in/kabir-puri
-                </a>
-            </div>
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
 
-            <section id="courses">
-                <h2>Courses at UPenn</h2>
-                <ul>
-                    <li>Learning in Robotics</li>
-                    <li>F1/10th Autonomous Racing</li>
-                    <li>Learning and Control for Adaptive and Reactive Robots</li>
-                    <li>Introduction to Robotics</li>
-                    <li>Machine Learning</li>
-                    <li>Machine Perception</li>
-                </ul>
-            </section>
-        </div>
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
 
-        <div class="content">
-            <section id="projects">
-                <h2>Projects</h2>
-                
-                <div class="project">
-                    <h3>Autonomous Racing with 1/10th Scale Cars</h3>
-                    <div class="date-location">January 2025 - Present</div>
-                    <ul>
-                        <li>Designing and implementing a comprehensive autonomous racing system integrating both LIDAR-based SLAM and Visual SLAM techniques with advanced data pre-processing methods for highly precise vehicle state estimation in dynamic racing environments.</li>
-                        <li>Developing and optimizing various control algorithms including Model Predictive Control (MPC), Advanced Driver Assistance Systems (ADAS), and Reinforcement Learning approaches for low-level path planning and real-time control, enabling the vehicle to navigate complex racing scenarios with minimal latency.</li>
-                        <li>Researching and testing multiple Graph and Tree search algorithms with specific vehicle constraints for high-level path planning and race-line optimization, significantly improving racing performance and lap times.</li>
-                        <li>Creating a modular software architecture in ROS2 that allows for rapid testing and comparison of different perception, planning, and control strategies in both simulated and real-world racing environments.</li>
-                    </ul>
-                </div>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
 
-                <div class="project">
-                    <h3>Unscented Kalman Filter for Quadcopter State Estimation</h3>
-                    <div class="date-location">January 2025 - February 2025</div>
-                    <ul>
-                        <li>Engineered and implemented a sophisticated quaternion-based Unscented Kalman Filter (UKF) for precise quadcopter orientation estimation, leveraging IMU data from accelerometer and gyroscope sensors to achieve robust sensor fusion and significantly minimize state uncertainty in three-dimensional space.</li>
-                        <li>Executed comprehensive sensor calibration protocols for both accelerometer and gyroscope components, utilizing a high-precision Vicon motion capture system as ground truth reference, ensuring optimal sensor performance and data reliability across varying flight conditions and maneuvers.</li>
-                        <li>Optimized filter parameters through rigorous testing and validation procedures, systematically tuning process and measurement noise covariance matrices to minimize variance while maintaining responsiveness to actual state changes.</li>
-                        <li>Developed visualization tools to compare estimated states against ground truth data, providing intuitive insights into filter performance and facilitating iterative improvements to the estimation algorithm.</li>
-                    </ul>
-                </div>
-
-                <div class="project">
-                    <h3>Learning Dynamical Systems for Adaptive Motion Planning</h3>
-                    <div class="date-location">January 2025 - February 2025</div>
-                    <ul>
-                        <li>Implemented and analyzed advanced techniques to learn autonomous time-invariant Dynamical Systems from limited training data, incorporating strict control theory constraints such as global asymptotic stability to ensure reliable and safe robot motion control in uncertain environments.</li>
-                        <li>Conducted comprehensive evaluations on diverse datasets, ranging from theoretical trajectories to real-world robot motion data, to assess the performance, robustness, and generalization capabilities of the implemented systems across various conditions and scenarios.</li>
-                        <li>Explored and optimized sophisticated pre-processing techniques and Gaussian Mixture Model (GMM) parameters to significantly enhance system adaptability and performance in complex, dynamic environments with obstacles and changing goals.</li>
-                        <li>Successfully applied the learned dynamical systems to robotic manipulator control, demonstrating adaptive and reactive motion planning capabilities in practical scenarios with real-time constraints, including obstacle avoidance and target tracking.</li>
-                    </ul>
-                </div>
-
-                <div class="project">
-                    <h3>Feature Matching with Transformers and Camera Localization</h3>
-                    <div class="date-location">November 2024 - December 2024</div>
-                    <ul>
-                        <li>Developed an advanced algorithm utilizing LoFTR (Local Feature TRansformer) to achieve high-precision feature matching across multiple images, leveraging the transformer architecture's ability to capture global context and establish reliable correspondences even in challenging visual conditions with varying illumination and viewpoints.</li>
-                        <li>Engineered a low-parameter Neural Network architecture specifically optimized for 3D reconstruction and accurate estimation of camera position and orientation, using reconstruction error with LoFTR-based matches as ground truth to continuously refine the model's performance through an iterative training process.</li>
-                        <li>Achieved a 90% reduction in reconstruction loss compared to traditional SIFT feature matches when employing the same neural network architecture, demonstrating significant improvements in camera localization accuracy and robustness in complex visual environments.</li>
-                        <li>Implemented comprehensive visualization tools to analyze the quality of feature matches and reconstruction results, providing intuitive feedback for parameter tuning and algorithm refinement throughout the development process.</li>
-                    </ul>
-                </div>
-
-                <div class="project">
-                    <h3>Manipulator Control with 7 DOF Franka Arm</h3>
-                    <div class="date-location">October 2024 - December 2024</div>
-                    <ul>
-                       
-                        <li>Developed a comprehensive robot control library with advanced forward and inverse kinematics algorithms for precise arm movements, incorporating singularity handling and joint limit constraints to ensure smooth and reliable operation throughout the robot's workspace.</li>
-                        <li>Integrated a sophisticated vision system utilizing AprilTags for accurate object detection and localization, enabling the robot to perceive and interact with its environment in real-time with high precision and robustness against varying lighting conditions.</li>
-                        <li>Engineered and optimized intelligent strategies for robot arm manipulation to efficiently handle both static and dynamic objects in complex environments, implementing adaptive grasping techniques and force control to accommodate objects of various shapes, sizes, and weights.</li>
-                        <li>Implemented and rigorously compared various path planning algorithms, including RRT (Rapidly-exploring Random Trees) and Potential Fields methods, to optimize trajectory generation for the robotic arm, analyzing performance metrics such as planning time, path smoothness, and obstacle avoidance capabilities.</li>
-                    </ul>
-                </div>
-
-                <div class="project">
-                    <h3>AI Revolutionizing AGV Motion: A Review</h3>
-                    <div class="date-location">January 2024 - July 2024</div>
-                    <ul>
-                        <li>Conducted an extensive literature review examining how AI models and algorithms are transforming Automated Guided Vehicle (AGV) path planning, analyzing their impact on both operational efficiency and safety enhancements in industrial mobility applications.</li>
-                        <li>Showcased significant advancements in Autonomous Agent architectures and Probabilistic modeling approaches for effective navigation in complex environments, highlighting their contributions to more robust and adaptive path planning methodologies.</li>
-                        <li>Explored emerging technologies in autonomous navigation, including reinforcement learning, deep neural networks, and hybrid AI systems, identifying potential pathways toward achieving more general intelligence capabilities in mobile robotics.</li>
-                       
-                    </ul>
-                </div>
-
-                <div class="project">
-                    <h3>AGV for Plant Disease Detection Using GoogleNet</h3>
-                    <div class="date-location">December 2023 - March 2024</div>
-                    <ul>
-                        <li>Pioneered an automated plant disease detection system to address large-scale agricultural challenges, developing a comprehensive solution using ROS2 and the Nav2 navigation framework to enable autonomous operation in unstructured farm environments.</li>
-                        <li>Performed sophisticated transfer learning with the GoogleNet architecture on the Plant Village dataset, fine-tuning the pre-trained model to achieve a 98% validation accuracy for leaf disease detection across multiple crop varieties and disease classes.</li>
-                        <li>Constructed a robust prototype hardware platform to test the system's capabilities, integrating LIDAR sensors with Simultaneous Localization and Mapping (SLAM) algorithms to enable precise autonomous navigation through dynamic agricultural environments while avoiding obstacles.</li>
-                        <li>Developed an efficient onboard computer vision pipeline for real-time disease detection, optimizing the trained model for deployment on resource-constrained embedded systems while maintaining high accuracy and processing speed.</li>
-                        <li>Incorporated Large Language Models (LLMs) to transform technical disease detection results into comprehensive and accessible information for farmers, providing actionable insights about detected diseases including treatment recommendations, prevention strategies, and potential economic impact.</li>
-                    </ul>
-                </div>
-
-                <div class="project">
-                    <h3>Optimization of Multi-flow Nozzle</h3>
-                    <div class="date-location">August 2023</div>
-                    <ul>
-                        <li>Used multivariate polynomial regression on experimental data to develop a system of equations that accurately modeled the complex fluid dynamics within multi-flow nozzle systems.</li>
-                        <li>Designed innovative multi-flow nozzles primarily used in fountains, optimizing for various flow characteristics including spray pattern, droplet size distribution, and water trajectory to achieve specific aesthetic and functional requirements.</li>
-                        <li>Conducted extensive computational fluid dynamics (CFD) simulations to validate the regression models and further refine the nozzle designs, ensuring optimal performance across a range of operating conditions.</li>
-                        <li>Created a parametric design framework that allows for rapid customization of nozzle specifications based on specific application requirements, significantly reducing the design iteration cycle time.</li>
-                    </ul>
-                </div>
-            </section>
-
-            <section id="experience">
-                <h2>Experience</h2>
-                <div class="experience-item">
-                    <h3>Intelligent Manufacturing Engineering Internship</h3>
-                    <div class="date-location">Dalip Manufacturers and CO. | May 2023 - Sep 2023 | Mumbai</div>
-                    <ul>
-                        <li>Developed a sophisticated Convolutional Neural Network (CNN) model for defect detection in manufactured parts, implementing advanced computer vision techniques to identify surface defects, structural anomalies, and quality issues with high accuracy, resulting in a significant improvement in quality control efficiency and reduction in human inspection time.</li>
-                        <li>Engineered a versatile computer vision system for precise dimensional checks of manufactured components, designing a solution compatible with any calibrated camera.</li>
-                        <li>Built and optimized a deep learning model that achieved 94% validation accuracy in detecting anomalies in statistical process control (SPC) chart patterns, enabling early identification of machinery failures and production issues before they escalated into critical problems.</li>
-                        <li>Successfully integrated the three distinct systems—defect detection, dimensional verification, and anomaly detection—into a comprehensive end-to-end pipeline for automated quality control and predictive maintenance, developing a unified data collection, processing, and analysis framework that streamlined the entire manufacturing quality assurance process.</li>
-                        <li>Demonstrated through rigorous testing and data analysis that the integrated system reduced faulty piece throughput by approximately 30%, while simultaneously decreasing quality control labor costs and improving overall production efficiency and product consistency.</li>
-                    </ul>
-                </div>
-
-                <div class="experience-item">
-                    <h3>Intern - Mechanical Engineering</h3>
-                    <div class="date-location">NOV India Pvt Ltd | Dec 2021 - Apr 2022 | Mumbai</div>
-                    <ul>
-                        <li>Coordinated and optimized the repair workflow of 7 complex oil drilling machines, developing and implementing standardized maintenance procedures that reduced downtime and improved operational efficiency.</li>
-                        <li>Designed an innovative material handling device for shop floor operations after conducting a comprehensive analysis of existing workflow bottlenecks, resulting in a 25% increase in material movement efficiency and reduced ergonomic strain on operators.</li>
-                        <li>Facilitated the documentation and cataloging of over 5,000 spare parts into a centralized database system, creating detailed technical specifications, cross-references, and inventory management protocols that significantly improved parts availability and reduced procurement lead times.</li>
-                        <li>Participated in cross-functional team meetings with engineering, operations, and maintenance departments to coordinate repair schedules and ensure minimal disruption to production activities while maintaining quality standards.</li>
-                    </ul>
-                </div>
-            </section>
-
-            <section id="skills">
-                <h2>Technical Skills</h2>
-                <div class="skills-list">
-                    <p><strong>Programming:</strong> Python, MATLAB, C++</p>
-                    <p><strong>AI/ML and Robotics:</strong> TensorFlow, Keras, PyTorch, Numpy, Pandas, Matplotlib, OpenCV, Scikit-Learn, Linux, ROS, MuJoCo, IsaacSim</p>
-                    <p><strong>Design and Analysis:</strong> Solidworks, Autodesk Inventor, Fusion360, Ansys Structural, Rapid Prototyping, 3D printing</p>
-                </div>
-            </section>
-        </div>
-    </div>
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
 </body>
 </html>
