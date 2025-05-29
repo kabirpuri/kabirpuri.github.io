@@ -20,21 +20,13 @@
             --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
             --gradient: linear-gradient(135deg, var(--primary), var(--secondary));
         }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             line-height: 1.6;
             color: var(--text);
             background: var(--bg);
         }
-
-        /* Header */
         .header {
             background: var(--gradient);
             color: white;
@@ -42,18 +34,13 @@
             position: relative;
             overflow: hidden;
         }
-
         .header::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
+            top: 0; left: 0; right: 0; bottom: 0;
             background: radial-gradient(circle at 20% 80%, rgba(255,255,255,0.1) 0%, transparent 50%),
                         radial-gradient(circle at 80% 20%, rgba(255,255,255,0.1) 0%, transparent 50%);
         }
-
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -61,7 +48,6 @@
             position: relative;
             z-index: 1;
         }
-
         .hero {
             display: flex;
             align-items: center;
@@ -69,7 +55,6 @@
             gap: 2rem;
             flex-wrap: wrap;
         }
-
         .hero h1 {
             font-size: clamp(2.5rem, 5vw, 3.5rem);
             font-weight: 700;
@@ -78,7 +63,6 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-
         .profile-image {
             width: 200px;
             height: 200px;
@@ -87,7 +71,12 @@
             object-fit: cover;
             box-shadow: var(--shadow-lg);
         }
-
+        .about-short {
+            margin-top: 1rem;
+            font-size: 1.15rem;
+            color: #e0e7ff;
+            text-align: center;
+        }
         .contact-links {
             display: flex;
             gap: 1rem;
@@ -95,7 +84,6 @@
             justify-content: center;
             margin-top: 1.5rem;
         }
-
         .contact-link {
             display: flex;
             align-items: center;
@@ -108,13 +96,10 @@
             transition: all 0.3s ease;
             backdrop-filter: blur(10px);
         }
-
         .contact-link:hover {
             background: rgba(255,255,255,0.2);
             transform: translateY(-2px);
         }
-
-        /* Navigation */
         .nav {
             background: var(--bg);
             padding: 1rem 0;
@@ -123,14 +108,12 @@
             top: 0;
             z-index: 100;
         }
-
         .nav-links {
             display: flex;
             justify-content: center;
             gap: 2rem;
             list-style: none;
         }
-
         .nav-link {
             color: var(--text);
             text-decoration: none;
@@ -139,22 +122,12 @@
             transition: all 0.3s ease;
             font-weight: 500;
         }
-
-        .nav-link:hover,
-        .nav-link.active {
+        .nav-link:hover, .nav-link.active {
             background: var(--primary);
             color: white;
         }
-
-        /* Main Content */
-        .main {
-            padding: 3rem 0;
-        }
-
-        .section {
-            margin-bottom: 4rem;
-        }
-
+        .main { padding: 3rem 0; }
+        .section { margin-bottom: 4rem; }
         .section-title {
             font-size: 2.5rem;
             font-weight: 700;
@@ -163,7 +136,6 @@
             text-align: center;
             position: relative;
         }
-
         .section-title::after {
             content: '';
             position: absolute;
@@ -175,59 +147,11 @@
             background: var(--gradient);
             border-radius: 2px;
         }
-
-        /* About Section */
-        .about-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 3rem;
-            align-items: start;
-        }
-
-        .about-text {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: var(--text);
-        }
-
-        .about-text p {
-            margin-bottom: 1.5rem;
-        }
-
-        .courses-card {
-            background: var(--bg-light);
-            padding: 1.5rem;
-            border-radius: 12px;
-            border: 1px solid var(--border);
-        }
-
-        .courses-card h3 {
-            color: var(--primary);
-            margin-bottom: 1rem;
-            font-size: 1.2rem;
-        }
-
-        .courses-list {
-            list-style: none;
-        }
-
-        .courses-list li {
-            padding: 0.5rem 0;
-            border-bottom: 1px solid var(--border);
-            font-size: 0.95rem;
-        }
-
-        .courses-list li:last-child {
-            border-bottom: none;
-        }
-
-        /* Projects Grid */
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 2rem;
         }
-
         .project-card {
             background: var(--bg-light);
             border-radius: 16px;
@@ -236,12 +160,10 @@
             transition: all 0.3s ease;
             border: 1px solid var(--border);
         }
-
         .project-card:hover {
             transform: translateY(-5px);
             box-shadow: var(--shadow-lg);
         }
-
         .project-image {
             width: 100%;
             height: 200px;
@@ -253,55 +175,34 @@
             position: relative;
             overflow: hidden;
         }
-
         .project-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
-
-        .project-placeholder {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.5rem;
-            opacity: 0.9;
-        }
-
-        .project-placeholder i {
-            font-size: 2.5rem;
-        }
-
-        .project-content {
-            padding: 1.5rem;
-        }
-
+        .project-content { padding: 1.5rem; }
         .project-title {
             font-size: 1.3rem;
             font-weight: 600;
             color: var(--text);
             margin-bottom: 0.5rem;
         }
-
         .project-date {
             color: var(--text-light);
             font-size: 0.9rem;
             margin-bottom: 1rem;
         }
-
         .project-description {
             color: var(--text);
             margin-bottom: 1.5rem;
             line-height: 1.6;
         }
-
         .project-tech {
             display: flex;
             flex-wrap: wrap;
             gap: 0.5rem;
             margin-bottom: 1.5rem;
         }
-
         .tech-tag {
             background: var(--primary);
             color: white;
@@ -310,112 +211,58 @@
             font-size: 0.8rem;
             font-weight: 500;
         }
-
-        .project-links {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .project-btn {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.75rem 1.5rem;
-            border: none;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-
-        .project-btn.primary {
-            background: var(--primary);
-            color: white;
-        }
-
-        .project-btn.primary:hover {
-            background: var(--primary-dark);
-        }
-
-        .project-btn.secondary {
-            background: transparent;
-            color: var(--primary);
-            border: 2px solid var(--primary);
-        }
-
-        .project-btn.secondary:hover {
-            background: var(--primary);
-            color: white;
-        }
-
-        /* Experience */
         .experience-list {
             display: flex;
             flex-direction: column;
             gap: 2rem;
         }
-
         .experience-item {
             background: var(--bg-light);
             padding: 2rem;
             border-radius: 12px;
             border: 1px solid var(--border);
         }
-
-        .experience-header {
-            margin-bottom: 1rem;
-        }
-
+        .experience-header { margin-bottom: 1rem; }
         .experience-title {
             font-size: 1.3rem;
             font-weight: 600;
             color: var(--text);
             margin-bottom: 0.5rem;
         }
-
         .experience-company {
             color: var(--primary);
             font-weight: 500;
             margin-bottom: 0.25rem;
         }
-
         .experience-date {
             color: var(--text-light);
             font-size: 0.9rem;
         }
-
         .experience-description {
             color: var(--text);
             line-height: 1.6;
         }
-
-        /* Skills */
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 1.5rem;
         }
-
         .skill-category {
             background: var(--bg-light);
             padding: 1.5rem;
             border-radius: 12px;
             border: 1px solid var(--border);
         }
-
         .skill-category h3 {
             color: var(--primary);
             margin-bottom: 1rem;
             font-size: 1.2rem;
         }
-
         .skill-tags {
             display: flex;
             flex-wrap: wrap;
             gap: 0.5rem;
         }
-
         .skill-tag {
             background: var(--accent);
             color: white;
@@ -423,67 +270,23 @@
             border-radius: 16px;
             font-size: 0.9rem;
         }
-
-        /* Mobile Responsiveness */
         @media (max-width: 768px) {
-            .hero {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .nav-links {
-                flex-wrap: wrap;
-                gap: 1rem;
-            }
-
-            .about-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .project-links {
-                flex-direction: column;
-            }
-
-            .contact-links {
-                justify-content: center;
-            }
-
-            .skills-grid {
-                grid-template-columns: 1fr;
-            }
+            .hero { flex-direction: column; text-align: center; }
+            .nav-links { flex-wrap: wrap; gap: 1rem; }
+            .projects-grid { grid-template-columns: 1fr; }
+            .skills-grid { grid-template-columns: 1fr; }
         }
-
         @media (max-width: 480px) {
-            .container {
-                padding: 0 0.5rem;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-
-            .project-content {
-                padding: 1rem;
-            }
+            .container { padding: 0 0.5rem; }
+            .section-title { font-size: 2rem; }
+            .project-content { padding: 1rem; }
         }
-
-        /* Smooth scroll */
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /* Animations */
+        html { scroll-behavior: smooth; }
         .fade-in {
             opacity: 0;
             transform: translateY(20px);
             animation: fadeIn 0.6s ease forwards;
         }
-
         @keyframes fadeIn {
             to {
                 opacity: 1;
@@ -493,13 +296,16 @@
     </style>
 </head>
 <body>
-    <!-- Header -->
+    <!-- Header with About -->
     <header class="header">
         <div class="container">
             <div class="hero">
                 <div style="display: flex; flex-direction: column; align-items: center; gap: 1rem;">
                     <h1>Kabir Puri</h1>
                     <img src="profile.jpg" alt="Kabir Puri" class="profile-image">
+                    <p class="about-short">
+                        I like to work with autonomous systems and motion planning.
+                    </p>
                     <div class="contact-links">
                         <a href="mailto:kapuri@seas.upenn.edu" class="contact-link">
                             <i class="fas fa-envelope"></i>
@@ -518,7 +324,6 @@
             </div>
         </div>
     </header>
-
     <!-- Navigation -->
     <nav class="nav">
         <div class="container">
@@ -530,57 +335,19 @@
             </ul>
         </div>
     </nav>
-
+    <!-- Dummy About Section for navigation (empty, since About is in header) -->
+    <section id="about" class="section" style="display:none;"></section>
     <!-- Main Content -->
     <main class="main">
         <div class="container">
-            <!-- About Section -->
-            <section id="about" class="section">
-                <h2 class="section-title">About Me</h2>
-                <div class="about-grid">
-                    <div class="about-text">
-                        <p>
-                            Currently pursuing my Masters of Science in Robotics at the University of Pennsylvania. 
-                            My research interests span autonomous systems, computer vision, and machine learning, 
-                            with a focus on developing innovative solutions for real-world challenges.
-                        </p>
-                        <p>
-                            I specialize in developing sophisticated algorithms for robotic perception and creating 
-                            adaptive control systems. My work ranges from autonomous racing systems to agricultural 
-                            AI solutions, always with an emphasis on practical applications that can make a meaningful impact.
-                        </p>
-                        <p>
-                            With experience in both academic research and industry applications, I bring a unique 
-                            perspective to robotics engineering, combining theoretical knowledge with hands-on 
-                            implementation skills.
-                        </p>
-                    </div>
-                    <div class="courses-card">
-                        <h3>Current Courses at UPenn</h3>
-                        <ul class="courses-list">
-                            <li>Learning in Robotics</li>
-                            <li>F1/10th Autonomous Racing</li>
-                            <li>Learning and Control for Adaptive and Reactive Robots</li>
-                            <li>Introduction to Robotics</li>
-                            <li>Machine Learning</li>
-                            <li>Machine Perception</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
             <!-- Projects Section -->
             <section id="projects" class="section">
                 <h2 class="section-title">Featured Projects</h2>
                 <div class="projects-grid">
-                    <!-- Project 1: End-to-End Autonomous Racing with BiLSTM-Attention -->
+                    <!-- Project 1 -->
                     <div class="project-card fade-in">
                         <div class="project-image">
-                            <!-- Add your actual image here: <img src="recurrent-lidarnet.jpg" alt="Recurrent LidarNet"> -->
-                            <div class="project-placeholder">
-                                <i class="fas fa-brain"></i>
-                                <span>Recurrent LidarNet</span>
-                            </div>
+                            <img src="recurrent-lidarnet.jpg" alt="Recurrent LidarNet">
                         </div>
                         <div class="project-content">
                             <h3 class="project-title">End-to-End Autonomous Racing with BiLSTM-Attention</h3>
@@ -598,27 +365,12 @@
                                 <span class="tech-tag">NVIDIA Jetson</span>
                                 <span class="tech-tag">PyTorch</span>
                             </div>
-                            <div class="project-links">
-                                <a href="#" class="project-btn primary">
-                                    <i class="fab fa-github"></i>
-                                    View Code
-                                </a>
-                                <a href="#" class="project-btn secondary">
-                                    <i class="fas fa-file-alt"></i>
-                                    Report
-                                </a>
-                            </div>
                         </div>
                     </div>
-
-                    <!-- Project 2: SBAMP -->
+                    <!-- Project 2 -->
                     <div class="project-card fade-in">
                         <div class="project-image">
-                            <!-- Add your actual image here: <img src="sbamp.jpg" alt="SBAMP"> -->
-                            <div class="project-placeholder">
-                                <i class="fas fa-route"></i>
-                                <span>SBAMP</span>
-                            </div>
+                            <img src="sbamp.jpg" alt="SBAMP">
                         </div>
                         <div class="project-content">
                             <h3 class="project-title">SBAMP - Sampling Based Adaptive Motion Planning</h3>
@@ -636,27 +388,12 @@
                                 <span class="tech-tag">Motion Planning</span>
                                 <span class="tech-tag">F1/10</span>
                             </div>
-                            <div class="project-links">
-                                <a href="#" class="project-btn primary">
-                                    <i class="fab fa-github"></i>
-                                    View Code
-                                </a>
-                                <a href="#" class="project-btn secondary">
-                                    <i class="fas fa-file-alt"></i>
-                                    Report
-                                </a>
-                            </div>
                         </div>
                     </div>
-
-                    <!-- Project 3: Training Diffusion Models With Reinforcement Learning -->
+                    <!-- Project 3 -->
                     <div class="project-card fade-in">
                         <div class="project-image">
-                            <!-- Add your actual image here: <img src="ddpo.jpg" alt="DDPO"> -->
-                            <div class="project-placeholder">
-                                <i class="fas fa-wave-square"></i>
-                                <span>Diffusion RL</span>
-                            </div>
+                            <img src="ddpo.jpg" alt="DDPO">
                         </div>
                         <div class="project-content">
                             <h3 class="project-title">Training Diffusion Models With Reinforcement Learning</h3>
@@ -674,27 +411,12 @@
                                 <span class="tech-tag">PyTorch</span>
                                 <span class="tech-tag">JAX</span>
                             </div>
-                            <div class="project-links">
-                                <a href="#" class="project-btn primary">
-                                    <i class="fab fa-github"></i>
-                                    View Code
-                                </a>
-                                <a href="#" class="project-btn secondary">
-                                    <i class="fas fa-file-alt"></i>
-                                    Report
-                                </a>
-                            </div>
                         </div>
                     </div>
-
-                    <!-- Project 4: Unscented Kalman Filter -->
+                    <!-- Project 4 -->
                     <div class="project-card fade-in">
                         <div class="project-image">
-                            <!-- Add your actual image here: <img src="ukf-quadcopter.jpg" alt="UKF Quadcopter"> -->
-                            <div class="project-placeholder">
-                                <i class="fas fa-helicopter"></i>
-                                <span>Quadcopter UKF</span>
-                            </div>
+                            <img src="ukf-quadcopter.jpg" alt="UKF Quadcopter">
                         </div>
                         <div class="project-content">
                             <h3 class="project-title">Unscented Kalman Filter for Quadcopter State Estimation</h3>
@@ -711,27 +433,12 @@
                                 <span class="tech-tag">Quaternions</span>
                                 <span class="tech-tag">MATLAB</span>
                             </div>
-                            <div class="project-links">
-                                <a href="#" class="project-btn primary">
-                                    <i class="fab fa-github"></i>
-                                    View Code
-                                </a>
-                                <a href="#" class="project-btn secondary">
-                                    <i class="fas fa-file-alt"></i>
-                                    Report
-                                </a>
-                            </div>
                         </div>
                     </div>
-
-                    <!-- Project 5: Feature Matching with Transformers -->
+                    <!-- Project 5 -->
                     <div class="project-card fade-in">
                         <div class="project-image">
-                            <!-- Add your actual image here: <img src="feature-matching.jpg" alt="Feature Matching"> -->
-                            <div class="project-placeholder">
-                                <i class="fas fa-eye"></i>
-                                <span>Computer Vision</span>
-                            </div>
+                            <img src="feature-matching.jpg" alt="Feature Matching">
                         </div>
                         <div class="project-content">
                             <h3 class="project-title">Feature Matching with Transformers and Camera Localization</h3>
@@ -748,27 +455,12 @@
                                 <span class="tech-tag">3D Reconstruction</span>
                                 <span class="tech-tag">PyTorch</span>
                             </div>
-                            <div class="project-links">
-                                <a href="#" class="project-btn primary">
-                                    <i class="fab fa-github"></i>
-                                    View Code
-                                </a>
-                                <a href="#" class="project-btn secondary">
-                                    <i class="fas fa-file-alt"></i>
-                                    Report
-                                </a>
-                            </div>
                         </div>
                     </div>
-
-                    <!-- Project 6: AGV Plant Disease Detection -->
+                    <!-- Project 6 -->
                     <div class="project-card fade-in">
                         <div class="project-image">
-                            <!-- Add your actual image here: <img src="plant-disease.jpg" alt="Plant Disease Detection"> -->
-                            <div class="project-placeholder">
-                                <i class="fas fa-leaf"></i>
-                                <span>Agricultural AI</span>
-                            </div>
+                            <img src="plant-disease.jpg" alt="Plant Disease Detection">
                         </div>
                         <div class="project-content">
                             <h3 class="project-title">AGV for Plant Disease Detection Using GoogleNet</h3>
@@ -786,21 +478,10 @@
                                 <span class="tech-tag">ROS2</span>
                                 <span class="tech-tag">LLM</span>
                             </div>
-                            <div class="project-links">
-                                <a href="#" class="project-btn primary">
-                                    <i class="fab fa-github"></i>
-                                    View Code
-                                </a>
-                                <a href="#" class="project-btn secondary">
-                                    <i class="fas fa-file-alt"></i>
-                                    Report
-                                </a>
-                            </div>
                         </div>
                     </div>
                 </div>
             </section>
-
             <!-- Experience Section -->
             <section id="experience" class="section">
                 <h2 class="section-title">Professional Experience</h2>
@@ -821,7 +502,6 @@
                     </div>
                 </div>
             </section>
-
             <!-- Skills Section -->
             <section id="skills" class="section">
                 <h2 class="section-title">Technical Skills</h2>
@@ -837,7 +517,6 @@
                             <span class="skill-tag">Linux</span>
                         </div>
                     </div>
-
                     <div class="skill-category">
                         <h3>AI/ML & Robotics</h3>
                         <div class="skill-tags">
@@ -850,7 +529,6 @@
                             <span class="skill-tag">IsaacSim</span>
                         </div>
                     </div>
-
                     <div class="skill-category">
                         <h3>Hardware & Platforms</h3>
                         <div class="skill-tags">
@@ -860,7 +538,6 @@
                             <span class="skill-tag">Embedded Systems</span>
                         </div>
                     </div>
-
                     <div class="skill-category">
                         <h3>Design & Analysis</h3>
                         <div class="skill-tags">
@@ -874,7 +551,6 @@
             </section>
         </div>
     </main>
-
     <script>
         // Smooth scrolling navigation
         document.querySelectorAll('.nav-link').forEach(link => {
@@ -887,21 +563,17 @@
                 }
             });
         });
-
         // Active navigation highlighting
         window.addEventListener('scroll', () => {
             const sections = document.querySelectorAll('.section');
             const navLinks = document.querySelectorAll('.nav-link');
-            
             let current = '';
             sections.forEach(section => {
                 const sectionTop = section.offsetTop - 100;
-                const sectionHeight = section.clientHeight;
                 if (scrollY >= sectionTop) {
                     current = section.getAttribute('id');
                 }
             });
-
             navLinks.forEach(link => {
                 link.classList.remove('active');
                 if (link.getAttribute('href') === `#${current}`) {
@@ -909,13 +581,8 @@
                 }
             });
         });
-
         // Intersection Observer for animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
+        const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -924,7 +591,6 @@
                 }
             });
         }, observerOptions);
-
         document.querySelectorAll('.fade-in').forEach(el => {
             observer.observe(el);
         });
