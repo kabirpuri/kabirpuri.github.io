@@ -34,39 +34,25 @@
             background: var(--bg);
         }
 
-        /* Header */
         .header {
             background: var(--gradient);
             color: white;
-            padding: 4rem 0;
+            padding: 3rem 0;
             position: relative;
             overflow: hidden;
-        }
-
-        .header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at 20% 80%, rgba(255,255,255,0.1) 0%, transparent 50%),
-                        radial-gradient(circle at 80% 20%, rgba(255,255,255,0.1) 0%, transparent 50%);
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 1rem;
-            position: relative;
-            z-index: 1;
         }
 
         .hero {
-            display: grid;
-            grid-template-columns: auto 1fr;
-            gap: 3rem;
+            display: flex;
             align-items: center;
+            gap: 3rem;
+            flex-wrap: wrap;
         }
 
         .profile-image {
@@ -79,7 +65,8 @@
         }
 
         .header-content {
-            max-width: 600px;
+            flex: 1;
+            min-width: 300px;
         }
 
         .hero h1 {
@@ -96,9 +83,9 @@
             font-size: 1.1rem;
             line-height: 1.8;
             opacity: 0.9;
+            max-width: 600px;
         }
 
-        /* Navigation */
         .nav {
             background: var(--bg);
             padding: 1rem 0;
@@ -130,7 +117,6 @@
             color: white;
         }
 
-        /* Main Content */
         .main {
             padding: 3rem 0;
         }
@@ -160,7 +146,6 @@
             border-radius: 2px;
         }
 
-        /* Projects Grid */
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -185,10 +170,6 @@
             width: 100%;
             height: 200px;
             background: var(--gradient);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
             position: relative;
             overflow: hidden;
         }
@@ -226,7 +207,6 @@
             display: flex;
             flex-wrap: wrap;
             gap: 0.5rem;
-            margin-bottom: 1.5rem;
         }
 
         .tech-tag {
@@ -238,60 +218,55 @@
             font-weight: 500;
         }
 
-        /* Mobile Responsiveness */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .skill-category {
+            background: var(--bg-light);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+        }
+
+        .skill-category h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-tag {
+            background: var(--accent);
+            color: white;
+            padding: 0.4rem 0.8rem;
+            border-radius: 16px;
+            font-size: 0.9rem;
+        }
+
         @media (max-width: 768px) {
             .hero {
-                grid-template-columns: 1fr;
+                flex-direction: column;
                 text-align: center;
-                gap: 2rem;
             }
-
             .nav-links {
                 flex-wrap: wrap;
                 gap: 1rem;
             }
-
             .projects-grid {
                 grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .container {
-                padding: 0 0.5rem;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-
-            .project-content {
-                padding: 1rem;
-            }
-        }
-
-        /* Smooth scroll */
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /* Animations */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeIn 0.6s ease forwards;
-        }
-
-        @keyframes fadeIn {
-            to {
-                opacity: 1;
-                transform: translateY(0);
             }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
     <header class="header">
         <div class="container">
             <div class="hero">
@@ -299,194 +274,179 @@
                 <div class="header-content">
                     <h1>Kabir Puri</h1>
                     <div class="about-text">
-                        <p>Masters student in Robotics at University of Pennsylvania specializing in autonomous systems and intelligent motion planning. Currently developing advanced algorithms for robotic perception and adaptive control systems with real-world applications.</p>
+                        <p>Masters student in Robotics at University of Pennsylvania specializing in autonomous systems and intelligent motion planning. Currently developing advanced algorithms for robotic perception and adaptive control systems.</p>
                     </div>
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- Navigation -->
     <nav class="nav">
         <div class="container">
             <ul class="nav-links">
                 <li><a href="#projects" class="nav-link">Projects</a></li>
                 <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- Main Content -->
     <main class="main">
         <div class="container">
-            <!-- Projects Section -->
             <section id="projects" class="section">
                 <h2 class="section-title">Featured Projects</h2>
                 <div class="projects-grid">
-                    <!-- 7 DOF Arm Project -->
-                    <div class="project-card fade-in">
+                    <div class="project-card">
                         <div class="project-image">
-                            <!-- Add your image: <img src="7dof-arm.jpg" alt="7 DOF Arm"> -->
-                            <div class="project-placeholder">
-                                <i class="fas fa-robot"></i>
-                                <span>7 DOF Manipulator</span>
-                            </div>
+                            <img src="7dof-arm.jpg" alt="7 DOF Arm Controller">
                         </div>
                         <div class="project-content">
-                            <h3 class="project-title">7 DOF Robotic Arm Controller Design</h3>
+                            <h3 class="project-title">7 DOF Robotic Arm Controller</h3>
                             <p class="project-date">March 2025 - Present</p>
-                            <p class="project-description">
-                                Advanced controller design for 7-degree-of-freedom robotic manipulator featuring:
-                                - Inverse kinematics solutions using Jacobian transpose method
-                                - Obstacle avoidance using potential fields
-                                - Trajectory optimization with cubic splines
-                                - Real-time control via ROS2
-                            </p>
+                            <p class="project-description">Advanced controller design featuring inverse kinematics solutions using Jacobian transpose method, obstacle avoidance with potential fields, and real-time ROS2 control.</p>
                             <div class="project-tech">
                                 <span class="tech-tag">ROS2</span>
                                 <span class="tech-tag">Kinematics</span>
-                                <span class="tech-tag">Control Theory</span>
                                 <span class="tech-tag">C++</span>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Autonomous Racing -->
-                    <div class="project-card fade-in">
+                    <div class="project-card">
                         <div class="project-image">
-                            <!-- Add your image: <img src="racing.jpg" alt="Autonomous Racing"> -->
-                            <div class="project-placeholder">
-                                <i class="fas fa-car"></i>
-                                <span>Autonomous Racing</span>
-                            </div>
+                            <img src="autonomous-racing.jpg" alt="Autonomous Racing">
                         </div>
                         <div class="project-content">
-                            <h3 class="project-title">End-to-End Autonomous Racing System</h3>
+                            <h3 class="project-title">End-to-End Autonomous Racing</h3>
                             <p class="project-date">January 2025 - Present</p>
-                            <p class="project-description">
-                                Full-stack autonomous racing solution integrating:
-                                - LIDAR-based SLAM with Cartographer
-                                - Visual odometry using ORB-SLAM3
-                                - Model Predictive Control (MPC) trajectory tracking
-                                - Reinforcement learning for overtaking strategies
-                            </p>
+                            <p class="project-description">Integrated LIDAR-based SLAM with Cartographer and visual odometry using ORB-SLAM3. Developed MPC trajectory tracking and RL overtaking strategies.</p>
                             <div class="project-tech">
                                 <span class="tech-tag">ROS2</span>
                                 <span class="tech-tag">SLAM</span>
-                                <span class="tech-tag">MPC</span>
-                                <span class="tech-tag">PyTorch</span>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Recurrent LidarNet -->
-                    <div class="project-card fade-in">
+                    <div class="project-card">
                         <div class="project-image">
-                            <!-- Add your image: <img src="lidarnet.jpg" alt="Recurrent LidarNet"> -->
-                            <div class="project-placeholder">
-                                <i class="fas fa-brain"></i>
-                                <span>LIDAR Networks</span>
-                            </div>
+                            <img src="recurrent-lidarnet.jpg" alt="Recurrent LidarNet">
                         </div>
                         <div class="project-content">
-                            <h3 class="project-title">Recurrent LidarNet for Autonomous Navigation</h3>
+                            <h3 class="project-title">Recurrent LidarNet</h3>
                             <p class="project-date">January 2025 - May 2025</p>
-                            <p class="project-description">
-                                Temporal convolution network with BiLSTM-attention layers processing raw LIDAR scans for:
-                                - 43% lower steering variance vs baseline
-                                - 61.6% reduced speed variance
-                                - Real-time inference on NVIDIA Jetson
-                            </p>
+                            <p class="project-description">Neural network mapping 2D LIDAR scans to control commands using BiLSTM and attention layers. Achieved 43% lower steering variance on NVIDIA Jetson.</p>
                             <div class="project-tech">
                                 <span class="tech-tag">PyTorch</span>
-                                <span class="tech-tag">LIDAR</span>
                                 <span class="tech-tag">BiLSTM</span>
-                                <span class="tech-tag">Jetson</span>
                             </div>
                         </div>
                     </div>
 
-                    <!-- SBAMP -->
-                    <div class="project-card fade-in">
+                    <div class="project-card">
                         <div class="project-image">
-                            <!-- Add your image: <img src="sbamp.jpg" alt="SBAMP"> -->
-                            <div class="project-placeholder">
-                                <i class="fas fa-route"></i>
-                                <span>Motion Planning</span>
-                            </div>
+                            <img src="sbamp-motionplanning.jpg" alt="SBAMP">
                         </div>
                         <div class="project-content">
-                            <h3 class="project-title">SBAMP: Sampling-Based Adaptive Motion Planning</h3>
+                            <h3 class="project-title">SBAMP Motion Planning</h3>
                             <p class="project-date">January 2025 - May 2025</p>
-                            <p class="project-description">
-                                Hybrid motion planning system combining:
-                                - RRT* global path planning
-                                - Lyapunov-stable local control
-                                - 60Hz update rate
-                                - 100% recovery from large disturbances
-                            </p>
+                            <p class="project-description">Real-time system combining RRT* global planning with Lyapunov-stable local control. Achieved 60Hz control rates on F1/10 hardware.</p>
                             <div class="project-tech">
-                                <span class="tech-tag">C++</span>
                                 <span class="tech-tag">RRT*</span>
-                                <span class="tech-tag">Control Theory</span>
                                 <span class="tech-tag">ROS2</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="diffusion-rl.jpg" alt="Diffusion RL">
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Diffusion RL Training</h3>
+                            <p class="project-date">March 2025 - Present</p>
+                            <p class="project-description">Adapted DDPO framework for discrete RL in FrozenLake-v1 environment. Benchmarking against baseline RL algorithms.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">PyTorch</span>
+                                <span class="tech-tag">JAX</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="feature-matching.jpg" alt="Feature Matching">
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Transformer Feature Matching</h3>
+                            <p class="project-date">November 2024 - December 2024</p>
+                            <p class="project-description">LoFTR transformers for 3D reconstruction with 90% reduction in loss compared to SIFT methods.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">PyTorch</span>
+                                <span class="tech-tag">OpenCV</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="plant-disease.jpg" alt="Plant Disease Detection">
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Plant Disease Detection AGV</h3>
+                            <p class="project-date">December 2023 - March 2024</p>
+                            <p class="project-description">ROS2-based AGV with GoogleNet achieving 98% accuracy in disease detection. Integrated LLM recommendations.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">ROS2</span>
+                                <span class="tech-tag">Transfer Learning</span>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- Experience Section -->
             <section id="experience" class="section">
-                <h2 class="section-title">Professional Experience</h2>
-                <div class="experience-list">
-                    <div class="experience-item fade-in">
-                        <div class="experience-header">
-                            <h3 class="experience-title">Intelligent Manufacturing and Automation Intern</h3>
-                            <p class="experience-company">Dalip Manufacturers and Co.</p>
-                            <p class="experience-date">May 2023 - September 2023 | Mumbai, India</p>
-                        </div>
-                        <p class="experience-description">
-                            Developed computer vision systems for quality control achieving 94% validation accuracy.
-                            Engineered automated dimensional verification system reducing faulty output by 30%.
+                <h2 class="section-title">Experience</h2>
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3 class="project-title">Intelligent Manufacturing Intern</h3>
+                        <p class="project-date">May 2023 - September 2023 | Dalip Manufacturers</p>
+                        <p class="project-description">
+                            Developed CNN models for defect detection (94% accuracy) and automated quality control systems. Integrated computer vision for dimensional verification.
                         </p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="skills" class="section">
+                <h2 class="section-title">Technical Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>Languages</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">C++</span>
+                            <span class="skill-tag">MATLAB</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>AI/ML</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">PyTorch</span>
+                            <span class="skill-tag">TensorFlow</span>
+                            <span class="skill-tag">JAX</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Robotics</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">ROS2</span>
+                            <span class="skill-tag">SLAM</span>
+                            <span class="skill-tag">MuJoCo</span>
+                        </div>
                     </div>
                 </div>
             </section>
         </div>
     </main>
-
-    <script>
-        // Smooth scrolling navigation
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                const targetSection = document.querySelector(targetId);
-                if (targetSection) {
-                    targetSection.scrollIntoView({ behavior: 'smooth' });
-                }
-            });
-        });
-
-        // Intersection Observer for animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.fade-in').forEach(el => {
-            observer.observe(el);
-        });
-    </script>
 </body>
 </html>
