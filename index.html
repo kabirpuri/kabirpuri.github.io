@@ -51,9 +51,9 @@
         .hero {
             display: flex;
             align-items: center;
-            justify-content: center;
-            gap: 2rem;
-            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 1.5rem;
+            min-height: 300px;
         }
         .hero h1 {
             font-size: clamp(2.5rem, 5vw, 3.5rem);
@@ -64,10 +64,9 @@
             background-clip: text;
         }
         .profile-image {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            border: 4px solid rgba(255,255,255,0.3);
+            width: 280px;
+            height: 280px;
+            border-radius: 16px;
             object-fit: cover;
             box-shadow: var(--shadow-lg);
         }
@@ -75,14 +74,39 @@
             margin-top: 1rem;
             font-size: 1.15rem;
             color: #e0e7ff;
-            text-align: center;
+            text-align: left;
+            max-width: 500px;
         }
         .contact-links {
             display: flex;
             gap: 1rem;
             flex-wrap: wrap;
-            justify-content: center;
+            justify-content: flex-start;
             margin-top: 1.5rem;
+        }
+        .hero-content {
+            flex: 1;
+            max-width: 700px;
+        }
+        .hero-image {
+            flex-shrink: 0;
+            margin-left: -1rem;
+        }
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column-reverse;
+                text-align: center;
+                gap: 2rem;
+            }
+            .hero-content {
+                max-width: none;
+            }
+            .about-short {
+                text-align: center;
+            }
+            .contact-links {
+                justify-content: center;
+            }
         }
         .contact-link {
             display: flex;
@@ -300,11 +324,10 @@
     <header class="header">
         <div class="container">
             <div class="hero">
-                <div style="display: flex; flex-direction: column; align-items: center; gap: 1rem;">
+                <div class="hero-content">
                     <h1>Kabir Puri</h1>
-                    <img src="Screenshot from 2025-05-28 15-47-34.png" alt="Kabir Puri" class="profile-image">
                     <p class="about-short">
-                        I study at the University of Pennsylvania and Building Novara Robotics
+                        I am currently building Novara Robotics and pursuing a Masters in Robotics at UPenn. I'm passionate about robot control and intelligent motion planning. Novara, is revolutionizing how teams collaborate with robots - making multi-robot systems accessible and intuitive for everyone.
                     </p>
                     <div class="contact-links">
                         <a href="mailto:kapuri@seas.upenn.edu" class="contact-link">
@@ -320,6 +343,9 @@
                             LinkedIn
                         </a>
                     </div>
+                </div>
+                <div class="hero-image">
+                    <img src="Screenshot from 2025-05-28 15-47-34.png" alt="Kabir Puri" class="profile-image">
                 </div>
             </div>
         </div>
