@@ -527,18 +527,17 @@
                             <p class="experience-date">May 2025 - Dec 2025</p>
                         </div>
                         <p class="experience-description">
-                            Formulated adaptive model predictive control (MPC) for controlling autonomous vehicles on varying terrain, Using Gaussian Process regression to learn vehicle dynamics across uncertain surface orientations. Deployed learned dynamics with sampling-based MPC (MPPI), using JAX to improve control frequency on Jetson hardware to reduce the compute bottleneck. Configured localization pipeline using Livox Mid-360 LiDAR for real-world experimental validation, enabling accurate state estimation in indoor and outdoor testing environments. Validated system performance on custom Isaac Sim environments and physical experiments with the F1tenth platform, across multiple non-planar surface conditions, demonstrating stability and adaptation effectiveness in challenging driving scenarios.
+                            I developed a real-time autonomy stack for vehicles driving on nonplanar terrain, combining model predictive control with a recursively updated sparse Gaussian Process residual model to adapt vehicle dynamics online as surface geometry changed. I also optimized the JAX-based control pipeline for NVIDIA Jetson deployment to improve embedded real-time performance and integrated a Livox Mid-360 LiDAR localization and state-estimation stack for repeatable indoor and outdoor testing on physical vehicles. The full system was evaluated in custom Isaac Sim environments, where it demonstrated robust trajectory tracking and stable performance across varied terrain conditions.
                         </p>
                     </div>
                     <div class="experience-item fade-in">
                         <div class="experience-header">
                             <h3 class="experience-title">Research Assistant</h3>
                             <p class="experience-company">Figueroa Robotics Lab, University of Pennsylvania</p>
-                            <p class="experience-date">April 2025 - July 2025</p>
+                            <p class="experience-date">Apr 2025 - Aug 2025</p>
                         </div>
                         <p class="experience-description">
-                            Developed a safe motion planning system for robot manipulators that combines Gaussian Process Distance Fields with quadratic programming to enable collision-free operation in dynamic environments with human presence. Implemented convex optimization framework (CVXPY) to solve real-time inverse kinematics under multiple constraints, balancing goal-reaching behavior with self-collision avoidance, joint limits, and obstacle clearance. Built perception-to-control pipeline that learns 3D signed distance fields via Gaussian Process regression from camera input, integrating spatial safety constraints directly into the nonlinear optimization objective. Integrated vision-language model outputs for object recognition into the control framework, enabling the robot to adapt manipulation strategies based on identified objects in its workspace.
-                        </p>
+                            I developed a real-time passive-safe motion planning system for robot manipulators designed to physically collaborate with humans in shared, dynamic environments, not just avoid them. I built a perception-to-control pipeline that learns 3D signed distance fields via Gaussian Process regression directly from camera input, embedding spatial safety constraints into the nonlinear optimization objective. I then implemented a CVXPY-based convex optimization framework to solve inverse kinematics in real time under simultaneous joint limit, self-collision, and dynamic obstacle constraints, balancing goal-reaching behavior with continuous safety guarantees that allow the robot to remain responsive to human presence throughout execution.                        </p>
                     </div>
                     <div class="experience-item fade-in">
                         <div class="experience-header">
