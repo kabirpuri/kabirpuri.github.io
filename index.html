@@ -20,20 +20,24 @@
             --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
             --gradient: linear-gradient(135deg, var(--primary), var(--secondary));
         }
+
         * { margin: 0; padding: 0; box-sizing: border-box; }
+
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             line-height: 1.6;
             color: var(--text);
             background: var(--bg);
         }
+
         .header {
             background: var(--gradient);
             color: white;
-            padding: 2rem 0;
+            padding: 4rem 0 2rem;
             position: relative;
             overflow: hidden;
         }
+
         .header::before {
             content: '';
             position: absolute;
@@ -41,6 +45,7 @@
             background: radial-gradient(circle at 20% 80%, rgba(255,255,255,0.1) 0%, transparent 50%),
                         radial-gradient(circle at 80% 20%, rgba(255,255,255,0.1) 0%, transparent 50%);
         }
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -48,6 +53,7 @@
             position: relative;
             z-index: 1;
         }
+
         .hero {
             display: flex;
             align-items: center;
@@ -55,6 +61,7 @@
             gap: 1.5rem;
             min-height: 300px;
         }
+
         .hero h1 {
             font-size: clamp(2.5rem, 5vw, 3.5rem);
             font-weight: 700;
@@ -63,6 +70,7 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
+
         .profile-image {
             width: 280px;
             height: 280px;
@@ -70,6 +78,7 @@
             object-fit: cover;
             box-shadow: var(--shadow-lg);
         }
+
         .about-short {
             margin-top: 1rem;
             font-size: 1.15rem;
@@ -77,6 +86,7 @@
             text-align: left;
             max-width: 500px;
         }
+
         .contact-links {
             display: flex;
             gap: 1rem;
@@ -84,30 +94,17 @@
             justify-content: flex-start;
             margin-top: 1.5rem;
         }
+
         .hero-content {
             flex: 1;
             max-width: 700px;
         }
+
         .hero-image {
             flex-shrink: 0;
             margin-left: -1rem;
         }
-        @media (max-width: 768px) {
-            .hero {
-                flex-direction: column-reverse;
-                text-align: center;
-                gap: 2rem;
-            }
-            .hero-content {
-                max-width: none;
-            }
-            .about-short {
-                text-align: center;
-            }
-            .contact-links {
-                justify-content: center;
-            }
-        }
+
         .contact-link {
             display: flex;
             align-items: center;
@@ -120,10 +117,12 @@
             transition: all 0.3s ease;
             backdrop-filter: blur(10px);
         }
+
         .contact-link:hover {
             background: rgba(255,255,255,0.2);
             transform: translateY(-2px);
         }
+
         .nav {
             background: var(--bg);
             padding: 1rem 0;
@@ -132,12 +131,14 @@
             top: 0;
             z-index: 100;
         }
+
         .nav-links {
             display: flex;
             justify-content: center;
             gap: 2rem;
             list-style: none;
         }
+
         .nav-link {
             color: var(--text);
             text-decoration: none;
@@ -146,12 +147,15 @@
             transition: all 0.3s ease;
             font-weight: 500;
         }
+
         .nav-link:hover, .nav-link.active {
             background: var(--primary);
             color: white;
         }
+
         .main { padding: 3rem 0; }
-        .section { margin-bottom: 4rem; }
+        .section { margin-bottom: 4rem; scroll-margin-top: 80px; }
+
         .section-title {
             font-size: 2.5rem;
             font-weight: 700;
@@ -160,6 +164,7 @@
             text-align: center;
             position: relative;
         }
+
         .section-title::after {
             content: '';
             position: absolute;
@@ -171,11 +176,13 @@
             background: var(--gradient);
             border-radius: 2px;
         }
+
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 2rem;
         }
+
         .project-card {
             background: var(--bg-light);
             border-radius: 16px;
@@ -184,10 +191,12 @@
             transition: all 0.3s ease;
             border: 1px solid var(--border);
         }
+
         .project-card:hover {
             transform: translateY(-5px);
             box-shadow: var(--shadow-lg);
         }
+
         .project-image {
             width: 100%;
             height: 200px;
@@ -199,94 +208,148 @@
             position: relative;
             overflow: hidden;
         }
+
         .project-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
+
         .project-content { padding: 1.5rem; }
+
         .project-title {
             font-size: 1.3rem;
             font-weight: 600;
             color: var(--text);
             margin-bottom: 0.5rem;
         }
+
         .project-date {
             color: var(--text-light);
             font-size: 0.9rem;
             margin-bottom: 1rem;
         }
+
         .project-description {
             color: var(--text);
             margin-bottom: 1.5rem;
             line-height: 1.6;
         }
-        .project-tech {
+
+        /* Publications Styles */
+        .publication-list {
             display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-bottom: 1.5rem;
+            flex-direction: column;
+            gap: 1.5rem;
         }
-        .tech-tag {
+
+        .publication-item {
+            background: var(--bg-light);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+        }
+
+        .pub-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 0.5rem;
+        }
+
+        .pub-authors {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .author-self {
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        .pub-venue {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .venue-name {
+            font-weight: 500;
+            color: var(--primary);
+        }
+
+        .pub-badge {
             background: var(--primary);
             color: white;
-            padding: 0.25rem 0.75rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 500;
+            font-size: 0.75rem;
+            padding: 0.2rem 0.5rem;
+            border-radius: 12px;
+            margin-left: 0.5rem;
         }
+
         .experience-list {
             display: flex;
             flex-direction: column;
             gap: 2rem;
         }
+
         .experience-item {
             background: var(--bg-light);
             padding: 2rem;
             border-radius: 12px;
             border: 1px solid var(--border);
         }
+
         .experience-header { margin-bottom: 1rem; }
+
         .experience-title {
             font-size: 1.3rem;
             font-weight: 600;
             color: var(--text);
             margin-bottom: 0.5rem;
         }
+
         .experience-company {
             color: var(--primary);
             font-weight: 500;
             margin-bottom: 0.25rem;
         }
+
         .experience-date {
             color: var(--text-light);
             font-size: 0.9rem;
         }
+
         .experience-description {
             color: var(--text);
             line-height: 1.6;
         }
+
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 1.5rem;
         }
+
         .skill-category {
             background: var(--bg-light);
             padding: 1.5rem;
             border-radius: 12px;
             border: 1px solid var(--border);
         }
+
         .skill-category h3 {
             color: var(--primary);
             margin-bottom: 1rem;
             font-size: 1.2rem;
         }
+
         .skill-tags {
             display: flex;
             flex-wrap: wrap;
             gap: 0.5rem;
         }
+
         .skill-tag {
             background: var(--accent);
             color: white;
@@ -294,53 +357,61 @@
             border-radius: 16px;
             font-size: 0.9rem;
         }
+
         @media (max-width: 768px) {
-            .hero { flex-direction: column; text-align: center; }
+            .hero {
+                flex-direction: column-reverse;
+                text-align: center;
+                gap: 2rem;
+            }
+            .hero-content { max-width: none; }
+            .hero-image { margin-left: 0; }
+            .about-short { text-align: center; }
+            .contact-links { justify-content: center; }
             .nav-links { flex-wrap: wrap; gap: 1rem; }
             .projects-grid { grid-template-columns: 1fr; }
             .skills-grid { grid-template-columns: 1fr; }
         }
+
         @media (max-width: 480px) {
-            .container { padding: 0 0.5rem; }
+            .container { padding: 0 0.75rem; }
             .section-title { font-size: 2rem; }
             .project-content { padding: 1rem; }
         }
+
         html { scroll-behavior: smooth; }
+
         .fade-in {
             opacity: 0;
             transform: translateY(20px);
-            animation: fadeIn 0.6s ease forwards;
+            transition: opacity 0.6s ease, transform 0.6s ease;
         }
-        @keyframes fadeIn {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
 <body>
     <!-- Header with About -->
-    <header class="header">
+    <header class="header" id="about">
         <div class="container">
             <div class="hero">
                 <div class="hero-content">
                     <h1>Kabir Puri</h1>
                     <p class="about-short">
-                         I am Building Novara Robotics, Helping factories optimize how they run and maintain their Robots and Machines..
+                        I am building Novara Robotics, helping factories optimize how they run and maintain their robots and machines.
                     </p> 
                     <div class="contact-links">
                         <a href="mailto:kapuri@seas.upenn.edu" class="contact-link">
-                            <i class="fas fa-envelope"></i>
-                            Email
+                            <i class="fas fa-envelope"></i> Email
                         </a>
                         <a href="https://github.com/kabirpuri" target="_blank" class="contact-link">
-                            <i class="fab fa-github"></i>
-                            GitHub
+                            <i class="fab fa-github"></i> GitHub
                         </a>
                         <a href="https://www.linkedin.com/in/kabir-puri-2633281b1/" target="_blank" class="contact-link">
-                            <i class="fab fa-linkedin"></i>
-                            LinkedIn
+                            <i class="fab fa-linkedin"></i> LinkedIn
                         </a>
                     </div>
                 </div>
@@ -350,18 +421,20 @@
             </div>
         </div>
     </header>
+
     <!-- Navigation -->
     <nav class="nav">
         <div class="container">
             <ul class="nav-links">
+                <li><a href="#about" class="nav-link">About</a></li>
                 <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#publications" class="nav-link">Publications</a></li>
                 <li><a href="#experience" class="nav-link">Experience</a></li>
                 <li><a href="#skills" class="nav-link">Skills</a></li>
             </ul>
         </div>
     </nav>
-    <!-- Dummy About Section for navigation (empty, since About is in header) -->
-    <section id="about" class="section" style="display:none;"></section>
+
     <!-- Main Content -->
     <main class="main">
         <div class="container">
@@ -369,7 +442,6 @@
             <section id="projects" class="section">
                 <h2 class="section-title">Projects</h2>
                 <div class="projects-grid">
-                     <!-- Project -1 -->
                     <div class="project-card fade-in">
                         <div class="project-image">
                             <img src="npmpc.png" alt="NonPlanar Racing">
@@ -378,44 +450,37 @@
                             <h3 class="project-title">Autonomous Non-Planar Racing</h3>
                             <p class="project-date">June 2025 - Nov 2025</p>
                             <p class="project-description">
-                                Developed an adaptive control system for autonomous vehicles that learns to handle changing terrain and uncertain driving conditions. The system combines Fast learning of terrains through Gaussian Processes and then using sampling-based model predictive control to ensure stable and responsive driving on uneven surfaces. The control pipeline is optimized to run efficiently on Jetson hardware and validated the system in both simulation and real-world tests using LIDAR-based localization.
+                                Developed an adaptive control system for autonomous vehicles that learns to handle changing terrain and uncertain driving conditions. The system combines fast learning of terrains through Gaussian Processes and sampling-based model predictive control to ensure stable driving on uneven surfaces.
                             </p>
                         </div>
                     </div>
 
-                    <!-- Project -1 -->
                     <div class="project-card fade-in">
                         <div class="project-image">
-                            <img src="dmpcdrones.png" alt="dmpcdrones">
+                            <img src="dmpcdrones.png" alt="Distributed Drone Control">
                         </div>
                         <div class="project-content">
                             <h3 class="project-title">Distributed Drone Control</h3>
                             <p class="project-date">Sep 2025 - Dec 2025</p>
                             <p class="project-description">
-                            This project develops and tests a system where multiple robots can safely navigate around each other using a distributed control approach that divides the workspace into safe zones (Buffered Voronoi Cells) for each robot. The results show that this method completely eliminates collisions between robots across all test scenarios with 4 to 32 agents, though the robots take slightly longer, more conservative paths to reach their goals compared to more aggressive methods that occasionally allow near-misses or collisions.
+                                Developed a distributed multi-robot control framework utilizing Buffered Voronoi Cells to eliminate collisions across scenarios with 4 to 32 agents while maintaining safe trajectories.
                             </p>
                         </div>
                     </div>
                     
-                    <!-- Project -1 -->
                     <div class="project-card fade-in">
                         <div class="project-image">
-                            <img src="physguard.png" alt="physguard">
+                            <img src="physguard.png" alt="Safe-Passive Robot Control">
                         </div>
                         <div class="project-content">
                             <h3 class="project-title">Safe-Passive Robot Control</h3>
                             <p class="project-date">Apr 2025 - Jul 2025</p>
                             <p class="project-description">
-                            The safe motion planning framework for robot manipulators that combines Gaussian Process Distance Fields with real-time convex optimization to ensure collision-free operation around humans. This includes a perception-to-control pipeline that learns 3D distance to object functions directly from camera input and integrates them into the robot’s inverse kinematics. The system uses a VLM to adjust the controller based on the human for safety.
+                                Built a safe motion planning framework for robot manipulators combining Gaussian Process Distance Fields with real-time convex optimization to ensure collision-free operation near humans.
                             </p>
                         </div>
                     </div>
 
-
-                    
-
-
-                    <!-- Project 1 -->
                     <div class="project-card fade-in">
                         <div class="project-image">
                             <img src="recurrent-lidarnet.png" alt="Recurrent LidarNet">
@@ -424,14 +489,11 @@
                             <h3 class="project-title">End-to-End Autonomous Racing with BiLSTM-Attention</h3>
                             <p class="project-date">Mar 2025 - May 2025</p>
                             <p class="project-description">
-                                Built Recurrent LidarNet, an end-to-end neural network that maps raw 2D LIDAR scans 
-                                to steering and throttle commands using temporal convolution, bidirectional LSTM, and 
-                                attention layers. Achieved 43% lower steering variance and 61.6% reduced speed variance 
-                                compared to TinyLidarNet.
+                                Built Recurrent LidarNet, an end-to-end neural network mapping raw 2D LIDAR scans to steering and throttle commands using temporal convolution, bidirectional LSTM, and attention layers.
                             </p>
                         </div>
                     </div>
-                    <!-- Project 2 -->
+
                     <div class="project-card fade-in">
                         <div class="project-image">
                             <img src="sbamp.png" alt="SBAMP">
@@ -440,15 +502,11 @@
                             <h3 class="project-title">SBAMP - Sampling Based Adaptive Motion Planning</h3>
                             <p class="project-date">Feb 2025 - Apr 2025</p>
                             <p class="project-description">
-                                Built SBAMP, a real-time motion planning system combining RRT* global planning with 
-                                Lyapunov-stable local control for dynamic environments. Enabled robust recovery from 
-                                large disturbances at 60Hz control rates, with near-100% success in simulation and 
-                                on F1/10 hardware.
+                                Built SBAMP, combining RRT* global planning with Lyapunov-stable local control for dynamic environments, supporting robust recovery at 60Hz control rates.
                             </p>
-                            
                         </div>
                     </div>
-                    <!-- Project 3 -->
+
                     <div class="project-card fade-in">
                         <div class="project-image">
                             <img src="ddpo.png" alt="DDPO">
@@ -457,111 +515,44 @@
                             <h3 class="project-title">Training Diffusion Models With Reinforcement Learning</h3>
                             <p class="project-date">March 2025 - May 2025</p>
                             <p class="project-description">
-                                Adapted the Denoising Diffusion Policy Optimization (DDPO) framework for discrete 
-                                reinforcement learning, modifying open-source code to train agents in the challenging 
-                                FrozenLake-v1 environment. Investigating reward shaping and advanced RL techniques to 
-                                accelerate convergence and improve policy robustness.
+                                Adapted Denoising Diffusion Policy Optimization (DDPO) for discrete RL environments, applying reward shaping to accelerate convergence and improve robustness.
                             </p>
-                    
-                        </div>
-                    </div>
-                    <!-- Project 4 -->
-                    <div class="project-card fade-in">
-                        <div class="project-image">
-                            <img src="ukf.png" alt="UKF Quadcopter">
-                        </div>
-                        <div class="project-content">
-                            <h3 class="project-title">Unscented Kalman Filter for Quadcopter State Estimation</h3>
-                            <p class="project-date">January 2025 - February 2025</p>
-                            <p class="project-description">
-                                Sophisticated quaternion-based UKF implementation for precise quadcopter orientation 
-                                estimation using IMU sensor fusion. Includes comprehensive sensor calibration with 
-                                Vicon motion capture validation and optimized filter parameters.
-                            </p>
-                            
-                        </div>
-                    </div>
-                    <!-- Project 5 -->
-                    <div class="project-card fade-in">
-                        <div class="project-image">
-                            <img src="feature-matching.png" alt="Feature Matching">
-                        </div>
-                        <div class="project-content">
-                            <h3 class="project-title">Feature Matching with Transformers and Camera Localization</h3>
-                            <p class="project-date">November 2024 - December 2024</p>
-                            <p class="project-description">
-                                Advanced computer vision system using LoFTR transformers for high-precision feature 
-                                matching and 3D reconstruction. Achieved 90% reduction in reconstruction loss compared 
-                                to traditional SIFT methods through optimized neural network architecture.
-                            </p>
-                            
-                        </div>
-                    </div>
-                    <!-- Project 6 -->
-                    <div class="project-card fade-in">
-                        <div class="project-image">
-                            <img src="plant-disease.png" alt="Plant Disease Detection">
-                        </div>
-                        <div class="project-content">
-                            <h3 class="project-title">AGV for Plant Disease Detection Using GoogleNet</h3>
-                            <p class="project-date">December 2023 - March 2024</p>
-                            <p class="project-description">
-                                Worked on the complete development of automated plant disease detection robot using 
-                                ROS2, Nav2 and Machine Learning. Performed Transfer Learning with GoogleNet to achieve 
-                                98% validation accuracy for leaf disease detection and integrated LLMs to provide 
-                                farmers with comprehensive information.
-                            </p>
-                            
                         </div>
                     </div>
                 </div>
             </section>
 
+            <!-- Publications Section -->
+            <section id="publications" class="section">
+                <h2 class="section-title">Publications</h2>
+                <div class="publication-list">
+                    <article class="publication-item fade-in">
+                        <h3 class="pub-title">
+                            Nonplanar Model Predictive Control for Autonomous Vehicles with Recursive Sparse Gaussian Process Dynamics
+                        </h3>
+                        <p class="pub-authors">
+                            A. Amine, <span class="author-self">K. Puri</span>, V.-A. Le, R. Mangharam
+                        </p>
+                        <p class="pub-venue">
+                            <span class="venue-name">IEEE Intelligent Vehicles Symposium (IV)</span>, 2026 
+                            <span class="pub-badge">To Appear</span>
+                        </p>
+                    </article>
 
+                    <article class="publication-item fade-in">
+                        <h3 class="pub-title">
+                            SBAMP: Sampling Based Adaptive Motion Planning
+                        </h3>
+                        <p class="pub-authors">
+                            S. Raorane, <span class="author-self">K. R. Puri</span>, A.-Q. Pham
+                        </p>
+                        <p class="pub-venue">
+                            <span class="venue-name">IEEE International Conference on Robotics and Automation (ICRA) Workshop on Foundation Models for Robotics</span>, 2026
+                        </p>
+                    </article>
+                </div>
+            </section>
 
-        <section id="publications" class="publications-section">
-  <h2 class="section-title">Publications</h2>
-  
-  <div class="publication-list">
-    
-    <!-- Publication 1 -->
-    <article class="publication-item">
-      <h3 class="pub-title">
-        Nonplanar Model Predictive Control for Autonomous Vehicles with Recursive Sparse Gaussian Process Dynamics
-      </h3>
-      <p class="pub-authors">
-        A. Amine, <span class="author-self">K. Puri</span>, V.-A. Le, R. Mangharam
-      </p>
-      <p class="pub-venue">
-        <span class="venue-name">IEEE Intelligent Vehicles Symposium (IV)</span>, 2026 
-        <span class="pub-badge">To Appear</span>
-      </p>
-    </article>
-
-    <!-- Publication 2 -->
-    <article class="publication-item">
-      <h3 class="pub-title">
-        SBAMP: Sampling Based Adaptive Motion Planning
-      </h3>
-      <p class="pub-authors">
-        S. Raorane, <span class="author-self">K. R. Puri</span>, A.-Q. Pham
-      </p>
-      <p class="pub-venue">
-        <span class="venue-name">IEEE International Conference on Robotics and Automation (ICRA) Workshop on Foundation Models for Robotics (FOR 2nd Edition)</span>, 2026
-      </p>
-    </article>
-
-  </div>
-</section>
-
-
-
-
-
-
-
-
-            
             <!-- Experience Section -->
             <section id="experience" class="section">
                 <h2 class="section-title">Experience</h2>
@@ -573,9 +564,10 @@
                             <p class="experience-date">May 2025 - Dec 2025</p>
                         </div>
                         <p class="experience-description">
-                            I developed a real-time autonomy stack for vehicles driving on nonplanar terrain, combining model predictive control with a recursively updated sparse Gaussian Process residual model to adapt vehicle dynamics online as surface geometry changed. I also optimized the JAX-based control pipeline for NVIDIA Jetson deployment to improve embedded real-time performance and integrated a Livox Mid-360 LiDAR localization and state-estimation stack for repeatable indoor and outdoor testing on physical vehicles. The full system was evaluated in custom Isaac Sim environments, where it demonstrated robust trajectory tracking and stable performance across varied terrain conditions.
+                            Developed a real-time autonomy stack for vehicles driving on nonplanar terrain using MPC and sparse Gaussian Process residual models. Optimized JAX-based control pipelines for NVIDIA Jetson hardware and integrated Livox Mid-360 LiDAR state-estimation.
                         </p>
                     </div>
+
                     <div class="experience-item fade-in">
                         <div class="experience-header">
                             <h3 class="experience-title">Research Assistant</h3>
@@ -583,8 +575,10 @@
                             <p class="experience-date">Apr 2025 - Aug 2025</p>
                         </div>
                         <p class="experience-description">
-                            I developed a real-time passive-safe motion planning system for robot manipulators designed to physically collaborate with humans in shared, dynamic environments, not just avoid them. I built a perception-to-control pipeline that learns 3D signed distance fields via Gaussian Process regression directly from camera input, embedding spatial safety constraints into the nonlinear optimization objective. I then implemented a CVXPY-based convex optimization framework to solve inverse kinematics in real time under simultaneous joint limit, self-collision, and dynamic obstacle constraints, balancing goal-reaching behavior with continuous safety guarantees that allow the robot to remain responsive to human presence throughout execution.                        </p>
+                            Engineered a passive-safe motion planning framework for human-collaborative manipulators. Built perception pipelines using 3D signed distance fields and CVXPY convex optimization for real-time inverse kinematics.
+                        </p>
                     </div>
+
                     <div class="experience-item fade-in">
                         <div class="experience-header">
                             <h3 class="experience-title">Automation Intern</h3>
@@ -592,17 +586,18 @@
                             <p class="experience-date">May 2023 - September 2023</p>
                         </div>
                         <p class="experience-description">
-                            I developed a CNN model to find defects in manufactured parts and built a computer vision system for dimensional checks that works with any calibrated camera. I also trained a deep learning model with to spot patterns in control charts that signal upcoming failures. I linked these three systems together into a full pipeline that handles everything from data collection to analysis for automated quality control and predictive maintenance. I also Automated assembly line operations for cable and connector manufacturing, reducing manual intervention across multi-stage production processes.
+                            Developed CNN-based computer vision defect detection systems and control-chart analysis pipelines for automated quality control and predictive maintenance.
                         </p>
                     </div>
                 </div>
             </section>
+
             <!-- Skills Section -->
             <section id="skills" class="section">
                 <h2 class="section-title">Technical Skills</h2>
                 <div class="skills-grid">
-                    <div class="skill-category">
-                        <h3>Languages and Computing</h3>
+                    <div class="skill-category fade-in">
+                        <h3>Languages & Computing</h3>
                         <div class="skill-tags">
                             <span class="skill-tag">Python</span>
                             <span class="skill-tag">MATLAB</span>
@@ -612,7 +607,7 @@
                             <span class="skill-tag">Linux</span>
                         </div>
                     </div>
-                    <div class="skill-category">
+                    <div class="skill-category fade-in">
                         <h3>AI/ML & Robotics</h3>
                         <div class="skill-tags">
                             <span class="skill-tag">PyTorch</span>
@@ -624,7 +619,7 @@
                             <span class="skill-tag">IsaacSim</span>
                         </div>
                     </div>
-                    <div class="skill-category">
+                    <div class="skill-category fade-in">
                         <h3>Hardware & Platforms</h3>
                         <div class="skill-tags">
                             <span class="skill-tag">Jetson</span>
@@ -633,7 +628,7 @@
                             <span class="skill-tag">Embedded Systems</span>
                         </div>
                     </div>
-                    <div class="skill-category">
+                    <div class="skill-category fade-in">
                         <h3>Design & Analysis</h3>
                         <div class="skill-tags">
                             <span class="skill-tag">SolidWorks</span>
@@ -646,29 +641,35 @@
             </section>
         </div>
     </main>
+
     <script>
         // Smooth scrolling navigation
         document.querySelectorAll('.nav-link').forEach(link => {
             link.addEventListener('click', function(e) {
-                e.preventDefault();
                 const targetId = this.getAttribute('href');
-                const targetSection = document.querySelector(targetId);
-                if (targetSection) {
-                    targetSection.scrollIntoView({ behavior: 'smooth' });
+                if (targetId.startsWith('#')) {
+                    e.preventDefault();
+                    const targetSection = document.querySelector(targetId);
+                    if (targetSection) {
+                        targetSection.scrollIntoView({ behavior: 'smooth' });
+                    }
                 }
             });
         });
+
         // Active navigation highlighting
         window.addEventListener('scroll', () => {
-            const sections = document.querySelectorAll('.section');
+            const sections = document.querySelectorAll('.section, header');
             const navLinks = document.querySelectorAll('.nav-link');
             let current = '';
+
             sections.forEach(section => {
-                const sectionTop = section.offsetTop - 100;
-                if (scrollY >= sectionTop) {
+                const sectionTop = section.offsetTop - 120;
+                if (window.scrollY >= sectionTop) {
                     current = section.getAttribute('id');
                 }
             });
+
             navLinks.forEach(link => {
                 link.classList.remove('active');
                 if (link.getAttribute('href') === `#${current}`) {
@@ -676,16 +677,17 @@
                 }
             });
         });
-        // Intersection Observer for animations
-        const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = { threshold: 0.15, rootMargin: '0px 0px -20px 0px' };
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
+                    entry.target.classList.add('visible');
                 }
             });
         }, observerOptions);
+
         document.querySelectorAll('.fade-in').forEach(el => {
             observer.observe(el);
         });
